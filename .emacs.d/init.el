@@ -1,16 +1,37 @@
-;; Initial Setup
 (require 'package)
 (setq package-enable-at-startup nil)
 (add-to-list 'package-archives
 	     '("melpa" . "https://melpa.org/packages/"))
 
-(unless (package-installed-p 'use-package)
-  (package-refresh-contents)
-  (package-install 'use-package))
+;; Git-auto-commit stuff
+(setq-default gac-automatically-push-p t)
+(setq-default gac-automatically-add-new-files-p t)
 
+;; Some settings to load before hand
 (package-initialize)
 (fset 'yes-or-no-p 'y-or-n-p)
 (require 'use-package-ensure)
+;; (load-theme 'solarized-light t)
+(load-theme 'vscode-dark-plus t)
+;; (electric-pair-mode 1)
+;; (setq electric-pair-pairs '(
+;;                             (?\" . ?\")
+;;                             (?\{ . ?\})
+
+;;                             ) )
+(setq backup-directory-alist
+      `(("." . ,(expand-file-name
+                 (concat user-emacs-directory "backups")))))
+
+(setq ring-bell-function 'ignore)
+
+;; Package Stuff
+(org-babel-do-load-languages
+ 'org-babel-load-languages '((C . t)))
+
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
 
 (defvar bootstrap-version)
 (let ((bootstrap-file
@@ -25,27 +46,7 @@
       (eval-print-last-sexp)))
   (load bootstrap-file nil 'nomessage))
 
-
 (org-babel-load-file (expand-file-name "~/.emacs.d/config.org"))
-
-;; Git-auto-commit stuff
-(setq-default gac-automatically-push-p t)
-(setq-default gac-automatically-add-new-files-p t)
-
-
-(load-theme 'vscode-dark-plus t)
-(setq backup-directory-alist
-      `(("." . ,(expand-file-name
-                 (concat user-emacs-directory "backups")))))
-
-(setq ring-bell-function 'ignore)
-
-;; Package Stuff
-(org-babel-do-load-languages
- 'org-babel-load-languages '((C . t)))
-
-
-
 
 
 
