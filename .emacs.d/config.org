@@ -23,7 +23,7 @@
      :config (which-key-mode))
 
   ;; Font
-  (set-face-attribute 'default nil :font "MesloLGS NF" :height 115)
+  (set-face-attribute 'default nil :font "MesloLGS NF" :height 120)
 
   (global-hl-line-mode t)
   (tool-bar-mode 0)
@@ -80,8 +80,9 @@
 	  (define-key global-map (kbd "C-c .") 'next-buffer)
 	  (define-key global-map (kbd "C-c ,") 'previous-buffer)
 	  (define-key c-mode-map (kbd "C-c C-s") 'my-shrink)
+          (define-key global-map (kbd "M-<down>") '(lambda() (interactive) (scroll-other-window 8)))
 	  (define-key global-map (kbd "C-c e") 'LaTeX-environment)
-          (define-key global-map (kbd "M-o") 'ace-window)
+	  (define-key global-map (kbd "M-o") 'ace-window)
 	  (define-key c-mode-map (kbd "C-c C-c") 'compile)
 	  (define-key global-map (kbd "C-f") 'sp-forward-sexp)
 	  (define-key global-map (kbd "C--") 'text-scale-decrease))
@@ -731,39 +732,35 @@ Use C-c p to naviagte to files within your current directory.
 * C++
 ** Compilation and basic setup
 #+BEGIN_SRC emacs-lisp 
-  (add-hook 'c-mode-commmon-hook #'rainbow-delimiters-mode)
-  (add-hook 'c-mode-hook 'smartparens-mode)
-  (add-hook 'c++-mode-hook 'smartparens-mode)
+    (add-hook 'c-mode-commmon-hook #'rainbow-delimiters-mode)
+    (add-hook 'c-mode-hook 'smartparens-mode)
+    (add-hook 'c++-mode-hook 'smartparens-mode)
 
-  (setq special-display-buffer-names
-    '("*compilation*"))
+    (setq special-display-buffer-names
+      '("*compilation*"))
 
-  (setq special-display-function
-	(lambda (buffer &optional args)
-		(split-window-horizontally)
-		(other-window -1)
-		(switch-to-buffer buffer)))
+    (setq special-display-function
+	  (lambda (buffer &optional args)
+		  (split-window-horizontally)
+		  (other-window -1)
+		  (switch-to-buffer buffer)))
 
-  (setq compile1 "clang -std=c99 -fsanitize=address -fno-omit-frame-pointer main.c lame-robot.ll -o main && ./main")
-  (setq compile2 "make test")
+    (setq compile1 "clang -std=c99 -fsanitize=address -fno-omit-frame-pointer main.c lame-robot.ll -o main && ./main")
+    (setq compile2 "make clean && make test")
 
-  (defun my-compile ()
-    (interactive)
-    (save-buffer)
-    (set (make-local-variable 'compile-command)
-	   (format compile2 (shell-quote-argument (buffer-name))))
-    (compile compile-command)
-    (shrink-window-horizontally 13)
-    )
+    (defun my-compile ()
+      (interactive)
+      (save-buffer)
+      (set (make-local-variable 'compile-command)
+	     (format compile2 (shell-quote-argument (buffer-name))))
+      (compile compile-command))
 
-  ;; (define-key global-map (kbd "<f7>") 'my-compile)
-  (global-set-key (kbd "<f8>") 'my-compile)
+    ;; (define-key global-map (kbd "<f7>") 'my-compile)
+    (global-set-key (kbd "<f8>") 'my-compile)
 
-  (with-eval-after-load 'compile
-    (define-key compilation-mode-map (kbd "C-c C-c") 'compile))
+    (with-eval-after-load 'compile
+      (define-key compilation-mode-map (kbd "C-c C-c") 'compile))
 #+END_SRC
-
-
 
 #+RESULTS:
 : compile
@@ -811,27 +808,15 @@ Use C-c p to naviagte to files within your current directory.
 * Dired
 #+BEGIN_SRC emacs-lisp
   (use-package fd-dired)
-
   (use-package ivy-dired-history)
+  (use-package dired-recent)
+  (dired-recent-mode 1)
 
-  (require 'savehist)
-  (add-to-list 'savehist-additional-variables 'ivy-dired-history-variable)
-  (savehist-mode 1)
-  ;; or if you use desktop-save-mode
-  ;; (add-to-list 'desktop-globals-to-save 'ivy-dired-history-variable)
-
-  (add-hook 'dired-mode-hook 'auto-revert-mode)
-
-
-  (with-eval-after-load 'dired
-    (require 'ivy-dired-history)
-    ;; if you are using ido,you'd better disable ido for dired
-    ;; (define-key (cdr ido-minor-mode-map-entry) [remap dired] nil) ;in ido-setup-hook
-    (define-key dired-mode-map "," 'dired))
 #+END_SRC
 
+
 #+RESULTS:
-: dired
+: t
 * Git
 #+BEGIN_SRC emacs-lisp
   (use-package magit
