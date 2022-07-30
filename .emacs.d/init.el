@@ -3,8 +3,9 @@
 (add-to-list 'package-archives
 	     '("melpa" . "https://melpa.org/packages/"))
 
-(setq-default gac-automatically-push-p t)
-(setq-default gac-automatically-add-new-files-p t)
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
 
 (package-initialize)
 (fset 'yes-or-no-p 'y-or-n-p)
@@ -22,11 +23,6 @@
 (org-babel-do-load-languages
  'org-babel-load-languages '((C . t)))
 
-(unless (package-installed-p 'use-package)
-  (package-refresh-contents)
-  (package-install 'use-package))
-
-
 (defvar bootstrap-version)
 (let ((bootstrap-file
        (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
@@ -42,6 +38,8 @@
 
 (org-babel-load-file (expand-file-name "~/.emacs.d/config.org"))
 
+(setq-default gac-automatically-push-p t)
+(setq-default gac-automatically-add-new-files-p t)
 
 (load-theme 'vscode-dark-plus t)
 
