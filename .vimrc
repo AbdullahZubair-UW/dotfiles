@@ -179,7 +179,7 @@ let g:neosolarized_termBoldAsBright = 1
 
 
 set background=dark
-autocmd vimenter * ++nested colorscheme solarized8_light
+" autocmd vimenter * ++nested colorscheme solarized8_light
 
 " NERDTree """"""""""""""""""""""""""""""""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
