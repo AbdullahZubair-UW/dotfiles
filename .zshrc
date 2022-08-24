@@ -131,7 +131,7 @@ alias fgrep='fgrep --color=auto'
 # confirm before overwriting something
 alias cp="cp -i"
 alias mv='mv -i'
-alias rm='rm -i'
+# alias rm='rm -i'
 
 # vim and emacs
 alias em="/usr/bin/emacs -nw"
