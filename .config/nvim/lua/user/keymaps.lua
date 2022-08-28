@@ -45,6 +45,9 @@ keymap("v", "p", '"_dP', opts)
 -- Press jk fast to enter
 keymap("i", "jk", "<ESC>", opts)
 
+-- Uploading/Downloading Website files
+keymap("n", "<F7>", ":!sh ~/Website/push.sh<CR>", opts)
+
 -- Visual --
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
