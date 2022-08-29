@@ -26,7 +26,7 @@ for_window [class="^.*"] border pixel 2
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec kitty
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+q kill
@@ -58,9 +58,6 @@ bindsym $mod+Shift+4 move workspace 4
 bindsym $mod+Shift+5 move workspace 5
 bindsym $mod+Shift+6 move workspace 6
 bindsym $mod+Shift+7 move workspace 7
-# bindsym $mod+Ctrl+Shift+J move workspace to output down
-# bindsym $mod+Ctrl+Shift+K move workspace to output up
-# bindsym $mod+Ctrl+Shift+L move workspace to output right
 
 # enter fullscreen mode for the focused container
 bindsym $mod+Shift+space fullscreen
@@ -70,11 +67,6 @@ bindsym $mod+y layout splitv
 bindsym $mod+u layout splith
 bindsym $mod+i layout stacking
 bindsym $mod+o layout tabbed
-
-bindsym $mod+Shift+Y split h; layout splitv
-bindsym $mod+Shift+U split h; layout splith
-bindsym $mod+Shift+I split h; layout stacking
-bindsym $mod+Shift+O split h; layout tabbed
 
 # toggle tiling / floating
 bindsym $mod+Shift+F floating toggle
@@ -150,16 +142,6 @@ mode "resize" {
 	bindsym Shift+K resize shrink height 1 px or 1 ppt
 	bindsym Shift+L resize grow width 1 px or 1 ppt
 
-	# same bindings, but for the arrow keys
-	bindsym Left resize shrink width 10 px or 10 ppt
-	bindsym Down resize grow height 10 px or 10 ppt
-	bindsym Up resize shrink height 10 px or 10 ppt
-	bindsym Right resize grow width 10 px or 10 ppt
-	bindsym Shift+Left resize shrink width 1 px or 1 ppt
-	bindsym Shift+Down resize grow height 1 px or 1 ppt
-	bindsym Shift+Up resize shrink height 1 px or 1 ppt
-	bindsym Shift+Right resize grow width 1 px or 1 ppt
-
 	# back to normal: Enter or Escape
 	bindsym Return mode "default"
 	bindsym Escape mode "default"
@@ -206,25 +188,6 @@ client.unfocused $baseA3 $baseA3 $baseB1 $green $baseA3
 client.urgent $red $red $baseB3 $green $red
 
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-# bar {
-# 	colors {
-# 		background $baseA3
-# 		statusline $baseB3
-# 		separator $baseB1
-#
-# 		focused_workspace  $custom $custom $baseB3
-# 		active_workspace   $baseA2 $custom $baseB1
-# 		inactive_workspace $baseA3 $baseA3 $baseB1
-# 		urgent_workspace   $red $red $baseB3
-# 	}
-#
-# 	status_command i3status
-# 	tray_output primary
-# 	#tray_output HDMI1
-# 	#status_command conky
-# }
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 set $Locker i3lock && sleep 1
