@@ -31,6 +31,7 @@ plugins=(
   zsh-syntax-highlighting
   copyfile
   cp
+  ubuntu
 )
 
 source $ZSH/oh-my-zsh.sh
