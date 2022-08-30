@@ -78,6 +78,7 @@ plugins=(
   zsh-autosuggestions
   zsh-syntax-highlighting
   copyfile
+  cp
 )
 
 source $ZSH/oh-my-zsh.sh
