@@ -190,6 +190,7 @@ client.urgent $red $red $baseB3 $green $red
 
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always feh --bg-fill $HOME/.config/walls/green.png
 
 set $Locker $HOME/i3lock-color/lock.sh && sleep 1
 

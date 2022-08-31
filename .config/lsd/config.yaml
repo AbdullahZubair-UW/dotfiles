@@ -87,7 +87,7 @@ recursion:
 # == Size ==
 # Specifies the format of the size column.
 # Possible values: default, short, bytes
-size: short
+size: default
 
 # == Permission ==
 # Specify the format of the permission column
@@ -115,7 +115,7 @@ no-symlink: false
 # == Total size ==
 # Whether to display the total size of directories.
 # Possible values: false, true
-total-size: true
+total-size: false
 
 # == Hyperlink ==
 # Attach hyperlink to filenames
