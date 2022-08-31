@@ -32,6 +32,9 @@ plugins=(
   copyfile
   cp
   ubuntu
+  copypath
+  copyfile
+  copybuffer
 )
 
 source $ZSH/oh-my-zsh.sh
