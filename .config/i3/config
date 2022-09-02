@@ -72,6 +72,9 @@ bindsym $mod+u layout splith
 bindsym $mod+i layout stacking
 bindsym $mod+o layout tabbed
 
+# Change direction of spawning
+bindsym $mod+t			split toggle
+
 # toggle tiling / floating
 bindsym $mod+Shift+F floating toggle
 
