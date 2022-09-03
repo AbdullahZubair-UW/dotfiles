@@ -11,13 +11,7 @@
 set $mod Mod4
 set $alt Mod1
 
-# Font for window titles. Will also be used by the bar unless a different font
-# is used in the bar {} block below. ISO 10646 = Unicode
-#font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-# The font above is very space-efficient, that is, it looks good, sharp and
-# clear in small sizes. However, if you need a lot of unicode glyphs or
-# right-to-left text rendering, you should instead use pango for rendering and
-# chose a FreeType font, such as:
+# Fonts
 font pango:MesloLGS NF 9
 
 for_window [class="^.*"] border pixel 2
@@ -43,10 +37,10 @@ bindsym $mod+b exec firefox
 bindsym $mod+space exec --no-startup-id j4-dmenu-desktop --no-generic --display-binary
 
 # change focus
-# bindsym $mod+h focus left
 bindsym $mod+j focus left
 bindsym $mod+k focus right
-# bindsym $mod+l focus right
+bindsym $mod+l focus up
+bindsym $mod+h focus down
 
 # move focused window
 bindsym $mod+Shift+H move left
@@ -153,27 +147,17 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-
-# KDE support
-for_window [class="Plasma-desktop"] border none
-for_window [class="krunner"] border none
-for_window [class="Kmix"] floating enable;
-for_window [class="Plasmoidviewer"] floating enable
-for_window [class="Klipper"] floating enable; border none
-
-for_window [window_role="pop-up"] floating enabled
-for_window [window_role="app"] floating enabled
-for_window [window_role="bubble"] floating enabled
-
 # solarized accents
 set $yellow #b58900
 set $orange #cb4b16
 set $red #dc322f
 set $magenta #d33682
+set $light-magenta #ff80ff
 set $violet #6c71c4
 set $blue #268bd2
 set $cyan #2aa198
 set $green #859900
+set $black #000000
 # solarized dark
 set $baseA3 #000000 
 set $baseA2 #dc322f 
@@ -186,11 +170,10 @@ set $baseB3 #dc322f
 set $custom #dc322f
 
 # clientclass border backgr. text indicator
-client.focused $custom $custom $baseB3 $green $custom
-client.focused_inactive $baseA2 $baseA2 $baseB2 $green $baseA2
-client.unfocused $baseA3 $baseA3 $baseB1 $green $baseA3
-client.urgent $red $red $baseB3 $green $red
-
+client.focused $light-magenta $light-magenta $light-magenta $light-magenta $light-magenta  
+# client.focused_inactive $baseA2 $baseA2 $baseB2 $green $baseA2
+client.unfocused $black $black $black $black $black
+# client.urgent $red $red $baseB3 $green $red
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always feh --bg-fill $HOME/.config/walls/green.png
