@@ -37,6 +37,9 @@ plugins=(
   copybuffer
   fd
   dirhistory
+  rsync
+  z                   # Shift around recent dirs using regex
+  fancy-ctrl-z
 )
 
 source $ZSH/oh-my-zsh.sh

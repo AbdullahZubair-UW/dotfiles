@@ -15,11 +15,6 @@ def autostart():
     home = os.path.expanduser("~/.config/qtile/autostart.sh")
     subprocess.run([home])
 
-@hook.subscribe.client_new
-def client_new(client):
-    if client.name == 'thunderbird':
-        client.togroup('')
-
 keys = [
     Key([mod], "h", lazy.layout.left(), desc="Move focus to left"),
     Key([mod], "l", lazy.layout.right(), desc="Move focus to right"),
@@ -60,8 +55,8 @@ keys = [
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
 ]
 
-groups = [Group(i) for i in ["", "", "", "", "" , "", "7", "8", " "]]
-group_hotkeys = "123456789"
+groups = [Group(i) for i in ["", "", "", "", "", "", "", ""]]
+group_hotkeys = "12345678"
 
 for g, k in zip(groups, group_hotkeys):
     keys.extend(
@@ -169,7 +164,6 @@ def get_widgets(primary=False):
         ),
         widget.GroupBox(
             highlight_method="line",
-            highlight_color = colors[7],
             background=colors[7],
             block_highlight_text_color = "#8b0000",
             hide_unused=True,
