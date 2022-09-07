@@ -15,11 +15,6 @@ def autostart():
     home = os.path.expanduser("~/.config/qtile/autostart.sh")
     subprocess.run([home])
 
-@hook.subscribe.client_new
-def client_new(client):
-    if client.name == 'thunderbird':
-        client.togroup('')
-
 keys = [
     Key([mod], "h", lazy.layout.left(), desc="Move focus to left"),
     Key([mod], "l", lazy.layout.right(), desc="Move focus to right"),
@@ -53,6 +48,7 @@ keys = [
     Key([mod], "d", lazy.spawn("rofi -show run"), desc="Spawn a command using a prompt widget"),
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
     Key([mod], "q", lazy.window.kill(), desc="Kill focused window"),
+    Key([mod, "shift"], "m", lazy.group[browser], desc="Spawn a command using a prompt widget"),
 
     Key([mod, "control"], "s", lazy.spawn("systemctl poweroff")),
     Key([mod, "control"], "e", lazy.shutdown()),
@@ -67,23 +63,17 @@ for g, k in zip(groups, group_hotkeys):
     keys.extend(
         [
             # mod1 + letter of group = switch to group
-            Key(
-                [mod],
-                k,
-                lazy.group[g.name].toscreen(),
-                desc=f"Switch to group {g.name}",
-            ),
+            Key( [mod], k, lazy.group[g.name].toscreen()),
             # mod1 + shift + letter of group = switch to & move focused window to group
-            Key(
-                [mod, "shift"],
-                k,
-                lazy.window.togroup(g.name, switch_group=False),
-                desc=f"Switch to & move focused window to group {g.name}",
-            ),
-            # Or, use below if you prefer not to switch to that group.
-            # # mod1 + shift + letter of group = move focused window to group
-            # Key([mod, "shift"], i.name, lazy.window.togroup(i.name),
-            #     desc="move focused window to group {}".format(i.name)),
+            Key( [mod, "shift"], k, lazy.window.togroup(g.name, switch_group=False)),
+        ]
+    )
+
+# Quickly swap between mail and first windows
+keys.extend(
+        [
+            Key([mod,"shift"], "m", lazy.group[groups[8].name].toscreen()),
+            Key([mod,"shift"], "n", lazy.group[groups[0].name].toscreen())
         ]
     )
 
@@ -188,7 +178,7 @@ def get_widgets(primary=False):
         smartbird.SmartBird(
             profile = "~/.thunderbird/mbc9sufl.default-release",
             fmt = " {}",
-            update_interval = 900,
+            update_interval = 60,
             foreground=colors[0],
             background=colors[3],
             mouse_callbacks = {
