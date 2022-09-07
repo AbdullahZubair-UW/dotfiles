@@ -56,7 +56,7 @@ keys = [
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
 ]
 
-groups = [Group(i) for i in ["", "", "", "", "" , "", "7", "8", " "]]
+groups = [Group(i) for i in ["", "", "", "", "" , "", "", "", " "]]
 group_hotkeys = "123456789"
 
 for g, k in zip(groups, group_hotkeys):
@@ -162,7 +162,7 @@ def get_widgets(primary=False):
             highlight_color = colors[7],
             background=colors[7],
             block_highlight_text_color = "#8b0000",
-            hide_unused=True,
+            hide_unused=False,
         ),
         widget.TextBox(
             text="", padding=0, fontsize=30, foreground=colors[7],
