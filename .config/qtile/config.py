@@ -27,11 +27,8 @@ keys = [
     Key([mod, "shift"], "j", lazy.layout.shuffle_down(), desc="Move window down"),
     Key([mod, "shift"], "k", lazy.layout.shuffle_up(), desc="Move window up"),
 
-    Key([mod, "control"], "h", lazy.layout.grow_left(), desc="Grow window to the left"),
-    Key([mod, "control"], "l", lazy.layout.grow_right(), desc="Grow window to the right"),
-    Key([mod, "control"], "j", lazy.layout.grow_down(), desc="Grow window down"),
-    Key([mod, "control"], "k", lazy.layout.grow_up(), desc="Grow window up"),
-    Key([mod], "n", lazy.layout.normalize(), desc="Reset all window sizes"),
+    Key([mod, "control"], "k", lazy.layout.increase_ratio()),
+    Key([mod, "control"], "j", lazy.layout.decrease_ratio()),
 
     Key([mod], "m", lazy.screen.next_group(), desc="Cycle to next group"),
     Key([mod], "n", lazy.screen.prev_group(), desc="Cycle to prev group"),
@@ -56,8 +53,8 @@ keys = [
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
 ]
 
-groups = [Group(i) for i in ["", "", "", "", "", "", "" ,"", " "]]
-group_hotkeys = "123456789"
+groups = [Group(i) for i in ["", "", "", "", "", "", "" ,"", " ","ﭮ"]]
+group_hotkeys = "1234567890"
 
 for g, k in zip(groups, group_hotkeys):
     keys.extend(
@@ -178,7 +175,7 @@ def get_widgets(primary=False):
         smartbird.SmartBird(
             profile = "~/.thunderbird/mbc9sufl.default-release",
             fmt = " {}",
-            update_interval = 60,
+            update_interval = 10,
             foreground=colors[0],
             background=colors[3],
             mouse_callbacks = {
