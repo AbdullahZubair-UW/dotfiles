@@ -355,7 +355,8 @@ snippet part "d/dx" w
 \frac{\partial ${1:V}}{\partial ${2:x}} $0
 endsnippet
 
-snippet SQ "\sqrt{}" iA
+context "math()"
+snippet sq "\sqrt{}" iA
 \sqrt{${1:${VISUAL}}} $0
 endsnippet
 
@@ -365,14 +366,17 @@ snippet choose "n Choose k" iA
 \binom{$1}{$2}$0
 endsnippet
 
+context "math()"
 snippet sr "^2" iA
 ^2
 endsnippet
 
+context "math()"
 snippet cb "^3" iA
 ^3
 endsnippet
 
+context "math()"
 snippet dt "to the ... power" iA
 ^{$1}$0
 endsnippet
@@ -505,16 +509,25 @@ snippet ** "cdot" iA
 endsnippet
 
 priority 300
-snippet INT "integral" bA
-\int_{${1:}}^{${2:}} ${3:${VISUAL}} $0
+context "math()"
+snippet INT "bounded integral" bA
+\int_{${1:}}^{${2:}} ${3:${VISUAL}}\, \dd $0
 endsnippet
 
 priority 300
+context "math()"
+snippet int "integral" bA
+\int ${3:${VISUAL}} \, \dd $0
+endsnippet
+
+priority 300
+context "math()"
 snippet IINT "Double integral" bA
 \iint_{${1:}} ${2:${VISUAL}} $0
 endsnippet
 
 priority 300
+context "math()"
 snippet iint "Double integral" b
 \int_{${1:}}^{${2:}} \int_{${3:}}^{${4:}} ${5:${VISUAL}} $0
 endsnippet
@@ -534,14 +547,14 @@ snippet '(?<!\\)(sin|cos|arccot|cot|csc|ln|log|exp|star|perp)' "ln" rwA
 endsnippet
 
 context "math()"
-snippet odv "Ordinary Derivative" 
-\\odv{$1}{$2}$0
+snippet dv "Derivative" iA
+\dv{$1}{$2}$0
 endsnippet
 
 
 priority 200
 context "math()"
-snippet '(?<!\\)(arcsin|arccos|arctan|arccot|arccsc|arcsec|pi|zeta|int)' "ln" rwA
+snippet '(?<!\\)(arcsin|arccos|arctan|arccot|arccsc|arcsec|pi|zeta)' "ln" rwA
 \\`!p snip.rv = match.group(1)`
 endsnippet
 
@@ -661,7 +674,7 @@ snippet '(?<!i)sts' "text subscript" irA
 _\text{$1} $0
 endsnippet
 
-snippet tt "text" iA
+snippet tt "text" i
 \text{$1}$0
 endsnippet
 

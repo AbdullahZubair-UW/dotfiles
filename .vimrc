@@ -33,7 +33,6 @@ let mapleader=" "
 "command! -nargs=0 Run call TermWrapper('./a.out')
 
 autocmd FileType cpp nnoremap <F5> :python3 Q3.py<CR>
-
 "File Finding
 set path+=**
 set wildmenu
@@ -107,10 +106,11 @@ call plug#end()
 "Turn off Code folding
 let g:vimtex_fold_enabled =0
 
-let g:Imap_FreezeImap=1
+let g:vimtex_view_method = 'zathura'
 let g:vimtex_view_general_viewer = 'zathura'
-let g:tex_flavor='latex'
-let g:vimtex_compiler_method='latexmk'
+let g:vimtex_compiler_method = 'latexmk'
+let g:vimtex_quickfix_autoclose_after_keystrokes=1
+let g:vimtex_quickfix_open_on_warning=0
 
 let g:UltiSnipsExpandTrigger="<c-e>"
 let g:UltiSnipsJumpForwardTrigger ='<c-l>'
@@ -122,30 +122,6 @@ let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
 setlocal spell
 set spelllang=en_us
 inoremap <C-s> <c-g>u<Esc>[s1z=`]a<c-g>u
-
-"let g:ycm_auto_trigger = 0
-
-
-" Extra VimTex Stuff
-let g:Tex_AdvancedMath=1
-let g:Tex_Env_proof = "\\begin{proof}\<CR><++>\<CR>\\end{proof}"
-"autocmd BufNewFile,BufRead *.tex call IMAP('EPR', g:Tex_Env_proof,'tex')   
-set winaltkeys=no
-
-
-let g:Tex_IgnoredWarnings =
-    \'Underfull'."\n".
-    \'Overfull'."\n".
-    \'specifier changed to'."\n".
-    \'You have requested'."\n".
-    \'Missing number, treated as zero.'."\n".
-    \'There were undefined references'."\n".
-    \'Citation %.%# undefined'."\n".
-    \'Double space found.'."\n"
-let g:Tex_IgnoreLevel = 8
-let g:vimtex_quickfix_enabled = 1
-let g:snipMate = { 'snippet_version' : 1 }
-let g:vimtex_quickfix_open_on_warning = 0
 
 
 
