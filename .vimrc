@@ -26,20 +26,15 @@ set hlsearch
 let mapleader=" "
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"" COC""
-
-
-"command! -nargs=0 Compile call TermWrapper(printf('g++ -std=c++11 %s', expand('%')))
-"command! -nargs=0 Run call TermWrapper('./a.out')
+let &t_ti.="\e[1 q"
+let &t_SI.="\e[5 q"
+let &t_EI.="\e[1 q"
+let &t_te.="\e[0 q"
 
 autocmd FileType cpp nnoremap <F5> :python3 Q3.py<CR>
 "File Finding
 set path+=**
 set wildmenu
-
-"Tag Searching
-"command! MakeTags !ctags -R 
-
 
 "keybindings for { completion, "jk" for escape, ctrl-a to select all
 "inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"

@@ -381,11 +381,6 @@ snippet dt "to the ... power" iA
 ^{$1}$0
 endsnippet
 
-context "math()"
-snippet rd "to the ... power" iA
-^{($1)}$0
-endsnippet
-
 snippet __ "subscript" iA
 _{$1}$0
 endsnippet
@@ -482,10 +477,22 @@ snippet EU "euscript" iA
 \EuScript{$1}$0
 endsnippet
 
+context "math()"
 snippet sup "supremum" i
 \operatorname{sup}$0
 endsnippet
 
+context "math()"
+snippet ord "order" i
+\operatorname{ord}($1)$0
+endsnippet
+
+context "math()"
+snippet GEN "Generator PMATH 347" iA
+\expval{$1}$0
+endsnippet
+
+context "math()"
 snippet inf "infemum" i
 \operatorname{inf}$0
 endsnippet
