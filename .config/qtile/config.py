@@ -96,7 +96,7 @@ layouts = [
      vspace = 3,
      panel_width = 200
      ),
-    layout.MonadTall(border_width=1, border_focus="#BF40BF", ratio=0.64),
+    layout.MonadTall(border_width=1, border_focus="#BF40BF", ratio=0.59),
     layout.Max(),
 ]
 
