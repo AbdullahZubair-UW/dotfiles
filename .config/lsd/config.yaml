@@ -26,7 +26,7 @@ color:
   # When "classic" is set, this is set to "no-color".
   # Possible values: default, <theme-file-name> when specifying <theme-file-name>, lsd will look up theme file XDG Base Directory if relative, e.g. ~/.config/lsd/themes/<theme-file-name>.yaml,
   # The file path if absolute
-  theme: default
+  theme: theme.yaml
 
 # == Date ==
 # This specifies the date format for the date column. The freeform format

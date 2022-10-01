@@ -7,7 +7,7 @@ import os
 from libqtile import hook
 
 mod = "mod4"
-terminal = "alacritty"
+terminal = "kitty"
 browser = "firefox"
 
 @hook.subscribe.startup_once
@@ -44,6 +44,8 @@ keys = [
     Key([mod], "b", lazy.spawn(browser), desc="Spawn a command using a prompt widget"),
     Key([mod], "d", lazy.spawn("rofi -show run"), desc="Spawn a command using a prompt widget"),
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
+    Key([mod, "shift"], "f", lazy.window.toggle_fullscreen(), desc="Toggle fullscreen",
+),
     Key([mod], "q", lazy.window.kill(), desc="Kill focused window"),
     Key([mod, "shift"], "m", lazy.group[browser], desc="Spawn a command using a prompt widget"),
 

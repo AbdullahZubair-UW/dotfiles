@@ -23,56 +23,41 @@ set updatetime=250
 set shortmess+=c " for CoC plugin
 set noshowmode " set that vim mode is hidden, to incorporate for lightline plugin
 set hlsearch
-let mapleader=" "
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let &t_ti.="\e[1 q"
 let &t_SI.="\e[5 q"
 let &t_EI.="\e[1 q"
 let &t_te.="\e[0 q"
+let mapleader = "\<Space>"
 
 autocmd FileType cpp nnoremap <F5> :python3 Q3.py<CR>
 "File Finding
 set path+=**
 set wildmenu
 
-"keybindings for { completion, "jk" for escape, ctrl-a to select all
-"inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+"keybindings 
 inoremap {<CR>  {<CR>}<Esc>O
 imap jk    <Esc>
 imap <C-w> <esc>:w<CR>
 inoremap {}     {}
 set belloff=all
+nnoremap <Leader>w :w<CR>
 
-" " Panel switching map <leader>h :wincmd h<CR>
-"map <leader>j :wincmd j<CR>
-"map <leader>k :wincmd k<CR>
-"map <leader>l :wincmd l<CR>
-" " Split panel
-"nnoremap <leader>v <C-w>v
-"nnoremap <leader>s <C-w>s
-" " Map yanked to clipboard
-" vmap <C-j> ":
-" " Line moving
-" "  Normal mode
-"nnoremap <C-k> :m .+1<CR>==
-"nnoremap <C-j> :m .-2<CR>==
-" " Insert mode
-"inoremap <C-k> <ESC>:m .+1<CR>==gi
-"inoremap <C-j> <ESC>:m .-2<CR>==gi
+" vp doesn't replace paste buffer
+function! RestoreRegister()
+  let @" = s:restore_reg
+  return ''
+endfunction
+function! s:Repl()
+  let s:restore_reg = @"
+  return "p@=RestoreRegister()\<cr>"
+endfunction
+vmap <silent> <expr> p <sid>Repl()
 
-" " Visual mode
-"vnoremap <C-k> :m '>+1<CR>gv=gv
-"vnoremap <C-j> :m '<-2<CR>gv=gv
-
-"Append template to new C++ files
-
-
-"Manually Load Templates
-"nnoremap ,Graph :read $HOME/Templates/graph-template.tex<CR>
 
 "AutoCompile Latex Stuff
-autocmd BufWritePost *.tex silent! execute "!pdflatex % >/dev/null 2>&1" | redraw!
+" autocmd BufWritePost *.tex silent! execute "!pdflatex % >/dev/null 2>&1" | redraw!
 
 set nocompatible               " be improved, required
 filetype off                   " required
@@ -80,7 +65,6 @@ filetype off                   " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()            " required
 Plugin 'VundleVim/Vundle.vim'  " required
-Plugin 'whonore/Coqtail'
 Plugin 'valloric/YouCompleteMe', { 'do': './install.py --tern-completer' }
 call vundle#end()               " required
 filetype plugin indent on       " required
@@ -89,13 +73,12 @@ call plug#begin()
   Plug 'morhetz/gruvbox'
   Plug 'preservim/nerdtree'
   Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-  Plug 'Xuyuanp/nerdtree-git-plugin' 
   Plug 'ryanoasis/vim-devicons'
   Plug 'flazz/vim-colorschemes'
   Plug 'lervag/vimtex'
   Plug 'SirVer/ultisnips'
-  Plug 'w0rp/ale'
   Plug 'lifepillar/vim-solarized8'
+  Plug 'tpope/vim-commentary'
 call plug#end()
 
 "Turn off Code folding
@@ -118,38 +101,10 @@ setlocal spell
 set spelllang=en_us
 inoremap <C-s> <c-g>u<Esc>[s1z=`]a<c-g>u
 
-
-
 set termguicolors
 
-" Default value is "normal", Setting this option to "high" or "low" does use the
-" same Solarized palette but simply shifts some values up or down in order to
-" expand or compress the tonal range displayed.
-let g:neosolarized_contrast = "normal"
-
-" Special characters such as trailing whitespace, tabs, newlines, when displayed
-" using ":set list" can be set to one of three levels depending on your needs.
-" Default value is "normal". Provide "high" and "low" options.
-let g:neosolarized_visibility = "normal"
-
-" I make vertSplitBar a transparent background color. If you like the origin
-" solarized vertSplitBar style more, set this value to 0.
-let g:neosolarized_vertSplitBgTrans = 1
-
-" If you wish to enable/disable NeoSolarized from displaying bold, underlined
-" or italicized" typefaces, simply assign 1 or 0 to the appropriate variable.
-" Default values:
-let g:neosolarized_bold = 1
-let g:neosolarized_underline = 1
-let g:neosolarized_italic = 0
-
-" Used to enable/disable "bold as bright" in Neovim terminal. If colors of bold
-" text output by commands like `ls` aren't what you expect, you might want to
-" try disabling this option. Default value:
-let g:neosolarized_termBoldAsBright = 1
-
-
 set background=dark
+" colorscheme solarized8_light
 " autocmd vimenter * ++nested colorscheme solarized8_light
 
 " NERDTree """"""""""""""""""""""""""""""""""""""""""""""""
