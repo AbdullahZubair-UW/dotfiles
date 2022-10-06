@@ -97,6 +97,11 @@ let g:UltiSnipsJumpForwardTrigger ='<c-l>'
 let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
 
 "SpellCheck Stuff
+hi clear SpellBad
+hi SpellBad cterm=underline
+" Set style for gVim
+hi SpellBad gui=undercurl
+
 setlocal spell
 set spelllang=en_us
 inoremap <C-s> <c-g>u<Esc>[s1z=`]a<c-g>u
@@ -105,7 +110,6 @@ set termguicolors
 
 set background=dark
 " colorscheme solarized8_light
-" autocmd vimenter * ++nested colorscheme solarized8_light
 
 " NERDTree """"""""""""""""""""""""""""""""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
