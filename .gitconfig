@@ -1,0 +1,6 @@
+[user]
+	email = abdzub@hotmail.com
+	name = Abdullah Zubair
+[alias]
+	ss = !git pull && git add -A && git commit -m \"normal edits\" && git push
+	ls = !bash ~/git-status ~/
