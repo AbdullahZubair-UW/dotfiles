@@ -104,6 +104,7 @@ hi SpellBad gui=undercurl
 
 setlocal spell
 set spelllang=en_us
+set spellfile=~/.vim/spell/en.utf-8.add
 inoremap <C-s> <c-g>u<Esc>[s1z=`]a<c-g>u
 
 set termguicolors
