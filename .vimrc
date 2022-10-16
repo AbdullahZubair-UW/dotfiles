@@ -1,29 +1,26 @@
-" Neovim config syntax enable " enable syntax highglighting
-syntax on " turn on syntax highlighting
+syntax on 
 filetype plugin on
 filetype indent on
 set textwidth=115
 set nofoldenable
-set undofile " set undotree to save to file
-set number " set line number
-set nowrap " set no soft wrap
-set tabstop=2 softtabstop=2 " set tab size
-set shiftwidth=2 " affect amount of indentation
-set expandtab " set that tab will insert softabstop amount of space characters
-set nowritebackup " set to never save backup                                 
-set noswapfile " set no swap file 
-set nobackup " set no backup file
-set breakindent " set every wrapped line will continue visually indented                    
-set smartindent " set smart indentation
-set smartcase " set to be cas sensitive when there is capital letter, this need set incsearch to work
-set incsearch " set search to be case insensitive
+set number 
+set nowrap
+set tabstop=2 softtabstop=2 
+set nobackup 
+set breakindent
+set smartindent 
+set smartcase 
+set incsearch 
 set hidden
 set relativenumber
 set updatetime=250
-set shortmess+=c " for CoC plugin
-set noshowmode " set that vim mode is hidden, to incorporate for lightline plugin
+set shortmess+=c 
+set noshowmode
 set hlsearch
 
+set nobackup 
+set nowritebackup
+set noswapfile
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let &t_ti.="\e[1 q"
 let &t_SI.="\e[5 q"
