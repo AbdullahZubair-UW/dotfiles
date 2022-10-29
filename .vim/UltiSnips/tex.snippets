@@ -155,10 +155,6 @@ ${1:${VISUAL}}
 .\] $0
 endsnippet
 
-snippet il "Math" wA
-\(${1:${VISUAL}}\) $0
-endsnippet
-
 snippet ali "Align" bA
 \begin{align*}
 	${1:${VISUAL}}
@@ -332,7 +328,11 @@ snippet conj "conjugate" i
 endsnippet
 
 snippet sum "sum" w
-\sum_{n=${1:1}}^{${2:\infty}} ${3:a_n z^n}
+\sum_{$1}^{${2:\infty}} ${3:a_n}
+endsnippet
+
+snippet dsum "sum" w
+\displaystyle \sum_{$1}^{${2:\infty}} ${3:a_n}
 endsnippet
 
 snippet taylor "taylor" w
@@ -484,7 +484,7 @@ endsnippet
 
 context "math()"
 snippet ord "order" i
-\operatorname{ord}($1)$0
+\ord($1)$0
 endsnippet
 
 context "math()"
@@ -737,11 +737,6 @@ endsnippet
 
 snippet letw "let omega" iA
 Let $\Omega \subset \C$ be open.
-endsnippet
-
-
-snippet HH "H" iA
-\mathbb{H}
 endsnippet
 
 snippet DD "D" iA
