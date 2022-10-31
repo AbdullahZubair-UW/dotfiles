@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 dir="$1"
 
@@ -25,51 +25,47 @@ do
   # Check if directory is a git repository (useless now)
 	if [ -d "$f/.git" ]
 	then
-		mod=0
 		cd $f
-
-		# Check for modified files
-		if [ $(git status | grep modified -c) -ne 0 ]
-		then
-      echo -en "\033[0;35m"
-      echo "${f}"
-      echo -en "\033[0m"
-			mod=1
-			echo -en "\033[0;31m"
-			echo "[$(git status | grep modified -c)] Modified files"
-			echo -en "\033[0m"
-		fi
-
-		# Check for untracked files
-		if [ $(git status | grep Untracked -c) -ne 0 ]
-		then
-		  mod=0
-      echo -en "\033[0;35m"
-      echo "${f}"
-      echo -en "\033[0m"
-			mod=1
-			echo -en "\033[0;31m"
-			echo "Untracked files"
-			echo -en "\033[0m"
-		fi
-		
-		# Check for unpushed changes
-		if [ $(git status | grep 'Your branch is ahead' -c) -ne 0 ]
-		then
-      mod=0
-      echo -en "\033[0;35m"
-      echo "${f}"
-      echo -en "\033[0m"
-      mod=1
-      echo -en "\033[0;31m"
-      echo "Unpushed commit"
-      echo -en "\033[0m"
-		fi
+		mod1=$(git status | grep modified -c)
+		mod2=$(git status | grep Untracked -c)
+		mod3=$(git status | grep 'Your branch is ahead' -c)
+    mod4=$(git status | grep 'Changes not staged' -c)
+    
+    mod=$(($mod1 + $mod2 + $mod3 + $mod4))
 
 		# Check if everything is peachy keen
 		if [ $mod -eq 0 ]
 		then
       continue
+    else
+      echo "${f}"
+      if [ $mod1 -ne 0 ]
+      then
+      echo -en "\033[0;35m"
+      echo "[$(git status | grep modified -c)] Modified files"
+      echo -en "\033[0m"
+      fi
+
+      if [ $mod2 -ne 0 ]
+      then
+      echo -en "\033[0;35m"
+      echo "[Some] Untracked files"
+      echo -en "\033[0m"
+      fi
+
+      if [ $mod3 -ne 0 ]
+      then
+        echo -en "\033[0;31m"
+        echo "Unpushed commit"
+        echo -en "\033[0m"
+      fi
+
+      if [ $mod4 -ne 0 ]
+      then
+        echo -en "\033[0;31m"
+        echo "[Some] deleted files"
+        echo -en "\033[0m"
+      fi
 		fi
 
 		cd ../
