@@ -33,7 +33,6 @@ plugins=(
   cp
   ubuntu
   copypath
-  copyfile
   copybuffer
   fd
   dirhistory
@@ -50,7 +49,7 @@ plugins=(
 )
 
 PROJECT_PATHS=(
-  # ~/uwaterloo/UW-4A/"PMATH 347" 
+  ~/uwaterloo/UW-4A/"PMATH 347"
   ~/uwaterloo/UW-4A/"PMATH 333"
   ~/uwaterloo/UW-4A/"AMATH 250" 
   ~/uwaterloo/Math
