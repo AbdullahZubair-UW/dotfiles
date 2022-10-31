@@ -3,4 +3,5 @@
 	name = Abdullah Zubair
 [alias]
 	ss = !git pull && git add -A && git commit -m \"normal edits\" && git push
+	su = !git pull && git add -u && git commit -m \"new changes\" && git push
 	ls = !bash ~/git-status ~/
