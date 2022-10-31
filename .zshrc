@@ -40,13 +40,23 @@ plugins=(
   rsync
   z                   # Shift around recent dirs using regex
   fancy-ctrl-z
+  gitignore           # Searches for good gitignore files to use.
+  # history             # Prints your command history.
+  last-working-dir    # Loads a new shell with last working dir.
+  man                 # Append man command to previous command.
+  perms               # Adds perms to file or dir.
+  pj                  # Dir jumping
+  scd                 # Dir jumping (2)
+)
+
+PROJECT_PATHS=(
+  # ~/uwaterloo/UW-4A/"PMATH 347" 
+  ~/uwaterloo/UW-4A/"PMATH 333"
+  ~/uwaterloo/UW-4A/"AMATH 250" 
+  ~/uwaterloo/Math
 )
 
 source $ZSH/oh-my-zsh.sh
-
-# User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
