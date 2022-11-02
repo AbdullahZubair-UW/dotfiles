@@ -21,6 +21,7 @@ set smartindent
 set nobackup 
 set nowritebackup
 set noswapfile
+set encoding=UTF-8
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let mapleader = "\<Space>"
 
@@ -57,6 +58,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()  
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'valloric/YouCompleteMe', { 'do': './install.py --tern-completer' }
+Plugin 'preservim/nerdtree'
 call vundle#end()            
 filetype plugin indent on   
 
@@ -65,6 +67,8 @@ call plug#begin()
   Plug 'lervag/vimtex'
   Plug 'SirVer/ultisnips'
   Plug 'tpope/vim-commentary'
+		Plug 'ryanoasis/vim-devicons'
+		Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 call plug#end()
 
 "Turn off Code folding
