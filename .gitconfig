@@ -4,6 +4,6 @@
 [alias]
 	ss = !git pull && git add -A && git commit -m \"normal edits\" && git push
 	su = !git pull && git add -u && git commit -m \"new changes\" && git push
-  ls = !bash ~/git-list-all ~/
-	stat = !bash ~/git-status ~/
-	update = !bash ~/git-update ~/
+  ls = !bash ~/scripts/git-list-all ~/
+	stat = !bash ~/scripts/git-status ~/
+	update = !bash ~/scripts/git-update ~/
