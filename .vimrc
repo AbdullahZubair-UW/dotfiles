@@ -51,6 +51,9 @@ function! s:Repl()
 endfunction
 vmap <silent> <expr> p <sid>Repl()
 
+" Loading Templates
+nnoremap ,hwk :-1read ~/.vim/.hwk.tex<CR>7j18li
+
 
 set nocompatible
 filetype off   
