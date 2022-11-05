@@ -22,6 +22,8 @@ set nobackup
 set nowritebackup
 set noswapfile
 set encoding=UTF-8
+set path=+**
+set wildmenu
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let mapleader = "\<Space>"
 
