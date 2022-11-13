@@ -62,17 +62,14 @@ postheadspace=.5em,
 ]{qstnstyle}%
 
 \declaretheoremstyle[
-spaceabove=8pt, spacebelow=4pt,
 headfont=\itshape\bfseries,
 headpunct=:,
 notefont=\mdseries, notebraces={(}{)},
 bodyfont=\normalfont,
 postheadspace=.5em,
-qed=\qedsymbol
-]{proofstyle}%
+]{solnstyle}%
 
 \declaretheoremstyle[
-spaceabove=8pt, spacebelow=4pt,
 headfont=\color{red}\itshape\bfseries,
 headpunct=:,
 notefont=\mdseries, notebraces={(}{)},
@@ -88,7 +85,7 @@ bodyfont=\normalfont,
 postheadspace=.5em,
 ]{casestyle}%
 
-\declaretheorem[name={Proof},numbered=no,style=proofstyle]{Proof} 
+\declaretheorem[name={Solution},numbered=no,style=solnstyle]{solution} 
 \declaretheorem[name={Claim},numbered=yes,style=claimstyle]{claim} %
 \declaretheorem[name={Case},numbered=yes,style=casestyle]{case} %
 \declaretheorem[name={Question},numbered=yes,style=qstnstyle]{qstn} %
@@ -123,10 +120,9 @@ postheadspace=.5em,
 \newcommand*{\N}{\mathbf{N}} 
 \newcommand*{\Z}{\mathbf{Z}} 
 \newcommand*{\Q}{\mathbf{Q}} 
-\newcommand*{\C}{\mathbf{C}} 
 \newcommand*{\R}{\mathbf{R}} 
 \newcommand*{\E}{\emptyset} 
-% \newcommand*{\setC}{\mathbf{C}}
+\newcommand*{\C}{\mathbf{C}}
 \newcommand*{\F}{\mathds{F}} 
 \newcommand*{\id}{\operatorname{id}}
 
@@ -140,4 +136,5 @@ postheadspace=.5em,
 \newcommand*{\sS}{\mathcal{S}}\newcommand*{\sT}{\mathcal{T}}\newcommand*{\sU}{\mathcal{U}}
 \newcommand*{\sV}{\mathcal{V}}\newcommand*{\sW}{\mathcal{W}}\newcommand*{\sX}{\mathcal{X}}
 \newcommand*{\sY}{\mathcal{Y}}\newcommand*{\sZ}{\mathcal{Z}}%
+
 
