@@ -7,7 +7,7 @@ import os
 from libqtile import hook
 
 mod = "mod4"
-terminal = "kitty"
+terminal = "alacritty"
 browser = "firefox"
 
 @hook.subscribe.startup_once

@@ -55,6 +55,7 @@ vmap <silent> <expr> p <sid>Repl()
 
 " Loading Templates
 nnoremap ,hwk :-1read ~/.vim/.hwk.tex<CR>7j18li
+nnoremap ,cite :-1read ~/.vim/.cite.tex<CR>
 
 
 set nocompatible
