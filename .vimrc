@@ -75,6 +75,7 @@ call plug#begin()
   Plug 'tpope/vim-commentary'
 		Plug 'ryanoasis/vim-devicons'
 		Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+		Plug 'tomasiser/vim-code-dark'
 call plug#end()
 
 "Turn off Code folding
