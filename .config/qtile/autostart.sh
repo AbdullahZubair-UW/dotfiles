@@ -1,3 +1,3 @@
 #!/bin/sh
 thunderbird &
-feh --bg-fill $HOME/.config/walls/green.png
+feh --bg-fill $HOME/.config/walls/CAN.jpg
