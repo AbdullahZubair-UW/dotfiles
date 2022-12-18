@@ -8,7 +8,6 @@ set nowrap
 set tabstop=1 softtabstop=1
 " set nobackup
 set breakindent
-set smartindent
 " set smartcase
 " set incsearch
 " set hidden
