@@ -2,20 +2,10 @@ syntax on
 filetype plugin on
 filetype indent on
 set textwidth=115
-" set nofoldenable
 set number
 set nowrap
 set tabstop=1 softtabstop=1
-" set nobackup
 set breakindent
-" set smartcase
-" set incsearch
-" set hidden
-" set relativenumber
-" set updatetime=250
-" set shortmess+=c
-" set noshowmode
-" set hlsearch
 
 set nobackup 
 set nowritebackup
@@ -75,6 +65,8 @@ call plug#begin()
 		Plug 'ryanoasis/vim-devicons'
 		Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 		Plug 'tomasiser/vim-code-dark'
+		Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
+		Plug 'junegunn/fzf.vim'
 call plug#end()
 
 "Turn off Code folding
