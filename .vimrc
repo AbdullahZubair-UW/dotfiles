@@ -1,7 +1,7 @@
 syntax on
 filetype plugin on
 filetype indent on
-set textwidth=115
+set textwidth=165
 set number
 set nowrap
 set tabstop=1 softtabstop=1
