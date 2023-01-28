@@ -82,10 +82,10 @@ alias push='git push origin'
 alias status='git status'  # 'status' is protected name so using 'stat' instead
 
 # Changing "ls" to "exa"
-alias ls='lsd -al --color=always --group-directories-first' # my preferred listing
-alias la='lsd -a --color=always --group-directories-first'  # all files and dirs
-alias ll='lsd -l --color=always --group-directories-first'  # long format
-alias lt='lsd -aT --color=always --group-directories-first' # tree listing
+alias ls='lsd -al --color=always --group-dirs' # my preferred listing
+alias la='lsd -a --color=always --group-dirs'  # all files and dirs
+alias ll='lsd -l --color=always --group-dirs'  # long format
+alias lt='lsd -aT --color=always --group-dirs' # tree listing
 alias l.='lsd -a | egrep "^\."'
 
 # Colorize grep output (good for log files)
