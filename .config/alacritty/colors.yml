@@ -7,9 +7,9 @@ colors:
   normal:
     black:   '0x1E1E1E'
     red:     '0xF44747'
-    green:   '0x608B4E'
+    green:   '#00cc00'
     yellow:  '0xD7BA7D'
-    blue:    '0x569CD6'
+    blue:    '#0066ff'
     magenta: '0xC586C0'
     cyan:    '0x9CDCFE'
     white:   '0xD4D4D4'
