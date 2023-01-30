@@ -67,6 +67,7 @@ call plug#begin()
 		Plug 'tomasiser/vim-code-dark'
 		Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 		Plug 'junegunn/fzf.vim'
+  Plug 'lunarvim/darkplus.nvim'
 call plug#end()
 
 "Turn off Code folding
@@ -98,5 +99,5 @@ inoremap <C-s> <c-g>u<Esc>[s1z=`]a<c-g>u
 set termguicolors
 
 set background=dark
-" colorscheme solarized8_light
+colorscheme codedark
 
