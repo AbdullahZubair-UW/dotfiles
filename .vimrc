@@ -4,8 +4,9 @@ filetype indent on
 set textwidth=165
 set number
 set nowrap
-set tabstop=1 softtabstop=1
-set breakindent
+set shiftwidth=2
+set tabstop=1
+" set breakindent
 
 set nobackup 
 set nowritebackup
@@ -99,5 +100,5 @@ inoremap <C-s> <c-g>u<Esc>[s1z=`]a<c-g>u
 set termguicolors
 
 set background=dark
-colorscheme codedark
+" colorscheme codedark
 
