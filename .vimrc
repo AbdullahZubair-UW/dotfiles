@@ -63,11 +63,11 @@ call plug#begin()
   Plug 'lervag/vimtex'
   Plug 'SirVer/ultisnips'
   Plug 'tpope/vim-commentary'
-		Plug 'ryanoasis/vim-devicons'
-		Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-		Plug 'tomasiser/vim-code-dark'
-		Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
-		Plug 'junegunn/fzf.vim'
+  Plug 'ryanoasis/vim-devicons'
+  Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+  Plug 'tomasiser/vim-code-dark'
+  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
+  Plug 'junegunn/fzf.vim'
   Plug 'lunarvim/darkplus.nvim'
 call plug#end()
 
