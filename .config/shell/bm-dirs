@@ -4,6 +4,6 @@ down   ${XDG_DOWNLOAD_DIR:-$HOME/Downloads}
 doc   ${XDG_DOCUMENTS_DIR:-$HOME/Documents}
 uw   ${XDG_DOCUMENTS_DIR:-$HOME/uwaterloo}
 365   ${XDG_DOCUMENTS_DIR:-$HOME/uwaterloo/UW-4B/PMATH 365}
-467   ${XDG_DOCUMENTS_DIR:-$HOME/uwaterloo/UW-4A/PMATH 467}
+467   ${XDG_DOCUMENTS_DIR:-$HOME/uwaterloo/UW-4B/PMATH 467}
 h   $HOME
 pp  ${XDG_PICTURES_DIR:-$HOME/Pictures}
