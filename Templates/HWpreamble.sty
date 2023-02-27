@@ -44,8 +44,6 @@
 
 \newtheorem{thrm}{Theorem}[chapter]
 \newtheorem{cor}{Corollary}[chapter]
-\newtheorem{lem}{Lemma}
-\newtheorem{claim}{Claim}
 \newtheorem{prop}{Proposition}[chapter]
 
 \theoremstyle{definition}
@@ -54,7 +52,6 @@
 \newtheorem{rem}{Remark}[chapter]
 
 \declaretheoremstyle[
-spaceabove=4pt, spacebelow=4pt,
 headfont=\color{blue}\normalfont\bfseries,
 headpunct=:,
 notefont=\mdseries, notebraces={(}{)},
@@ -71,9 +68,9 @@ postheadspace=.5em,
 ]{solnstyle}%
 
 \declaretheoremstyle[
-headfont=\color{red}\itshape\bfseries,
+headfont=\color{black}\bfseries,
 headpunct=:,
-notefont=\mdseries, notebraces={(}{)},
+notefont=\normalfont, notebraces={(}{)},
 bodyfont=\itshape,
 postheadspace=.5em,
 ]{claimstyle}%
@@ -87,8 +84,10 @@ postheadspace=.5em,
 ]{casestyle}%
 
 \declaretheorem[name={Solution},numbered=no,style=solnstyle]{solution} 
+\declaretheorem[name={Lemma},numbered=no,style=solnstyle]{lem} 
 \declaretheorem[name={Case},numbered=yes,style=casestyle]{case} %
 \declaretheorem[name={Question},numbered=yes,style=qstnstyle]{qstn} %
+\declaretheorem[name={Claim},numbered=yes,style=claimstyle]{claim} %
 
 \DeclareMathOperator{\cis}{cis} 
 \DeclareMathOperator{\sgn}{sgn}
@@ -126,6 +125,8 @@ postheadspace=.5em,
 \newcommand*{\s}{\mathbf{S}}
 \newcommand*{\F}{\mathds{F}} 
 \newcommand*{\id}{\operatorname{id}}
+\newcommand*{\cl}{\operatorname{Cl}}
+\newcommand*{\wind}{\operatorname{wind}}
 
 
 \newcommand*{\sA}{\mathcal{A}}\newcommand*{\sB}{\mathcal{B}}\newcommand*{\sC}{\mathcal{C}}
@@ -147,6 +148,7 @@ postheadspace=.5em,
 \newcommand*{\fS}{\mathfrak{S}}\newcommand*{\fT}{\mathfrak{T}}\newcommand*{\fU}{\mathfrak{U}}
 \newcommand*{\fV}{\mathfrak{V}}\newcommand*{\fW}{\mathfrak{W}}\newcommand*{\fX}{\mathfrak{X}}
 \newcommand*{\fY}{\mathfrak{Y}}\newcommand*{\fZ}{\mathfrak{Z}}%
+
 
 
 
