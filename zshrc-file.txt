@@ -123,6 +123,7 @@ lfcd () {
 }
 bindkey -s '^o' '^ulfcd\n'
 
+#--- Makes an assignment directory with preset question files.
 mkA(){
   mkdir -p -- "$1"
   cd "$1"
@@ -130,15 +131,18 @@ mkA(){
   cp ~/Templates/HWpreamble.sty .
 }
 
+#--- Navigating
 j() {
     [ $# -gt 0 ] && z "$*" && return
     cd "$(z -l 2>&1 | fzf --height 40% --nth 2.. --reverse --inline-info +s --tac --query "${*##-* }" | sed 's/^[0-9,.]* *//')"
 }
 
+#--- Quickly opening pdf's in Zathura
 p() {
     [ $# -gt 0 ] && fzf && return
     zathura "$(fzf)"
 }
+bindkey -s "^p" 'p^M'
 
 backup-SSD() {
   rsync-synchronize ~/uwaterloo/ /media/az/SamsungSSD/UWaterloo-Backup/
@@ -148,5 +152,4 @@ backup-SSD() {
   rsync-synchronize ~/install-client/ /media/az/SamsungSSD/Install-Client-Backup/
 }
 
-bindkey -s "^p" 'p^M'
 
