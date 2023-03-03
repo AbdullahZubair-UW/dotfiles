@@ -152,4 +152,7 @@ backup-SSD() {
   rsync-synchronize ~/install-client/ /media/az/SamsungSSD/Install-Client-Backup/
 }
 
+#-- Start fzf from home directory
+export FZF_DEFAULT_COMMAND="fdfind . $HOME"
+
 
