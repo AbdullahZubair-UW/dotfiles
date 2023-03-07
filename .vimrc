@@ -99,6 +99,6 @@ inoremap <C-s> <c-g>u<Esc>[s1z=`]a<c-g>u
 
 set termguicolors
 
-set background=dark
-" colorscheme codedark
+" set background=dark
+" colorscheme gruvbox8_soft
 
