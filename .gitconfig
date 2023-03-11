@@ -2,8 +2,13 @@
 	email = abdzub@hotmail.com
 	name = Abdullah Zubair
 [alias]
+  ;Pulls, adds everthing updated and pushes
 	ss = !git pull && git add -A && git commit -m \"normal edits\" && git push
+  ;Pulls, adds everthing changed and pushes (Standard command I use)
 	su = !git pull && git add -u && git commit -m \"new changes\" && git push
+  ;Lists all git repos on my system
   ls = !bash ~/scripts/git-list-all ~/
+  ;Lists the ones which haven't been pushed to repo
 	stat = !bash ~/scripts/git-status ~/
+  ;Pushes all unchanged ones from git stat command
 	update = !bash ~/scripts/git-update ~/
