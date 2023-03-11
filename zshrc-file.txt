@@ -154,6 +154,8 @@ backup-SSD() {
   rsync-synchronize ~/install-client/ /media/az/SamsungSSD/Install-Client-Backup/
 }
 
+#testing
+
 
 #--- Print function that first asks for cropping and then prints to letter.
 printfile() {
@@ -167,6 +169,11 @@ printfile() {
 
   echo "Your file is printing...."
   lpr -P Brother_HL-L2390DW -o fit-to-page -o media=letter -o print-quality=5 "$1"
+}
+
+#--- Updates my zshrc-file.tx when changes occur
+update-zshrc(){
+  cat ~/.zshrc > ~/zshrc-file.txt
 }
 
 #-- Start fzf from home directory
