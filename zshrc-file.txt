@@ -154,7 +154,7 @@ backup-SSD() {
   rsync-synchronize ~/install-client/ /media/az/SamsungSSD/Install-Client-Backup/
 }
 
-#Testing backup funtion
+#Testing backup funtion another
 
 #--- Print function that first asks for cropping and then prints to letter.
 printfile() {
