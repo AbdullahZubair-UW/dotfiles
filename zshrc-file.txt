@@ -148,6 +148,7 @@ bindkey -s "^p" 'p^M'
 backup-SSD() {
   rsync-synchronize ~/uwaterloo/ /media/az/SamsungSSD/UWaterloo-Backup/
   rsync-synchronize ~/.config/ /media/az/SamsungSSD/Config-Backup/
+  rsync-synchronize ~/dotfiles/ /media/az/SamsungSSD/dotfiles-Backup/
   rsync-synchronize ~/teaching/ /media/az/SamsungSSD/Teaching-Backup/
   rsync-synchronize ~/Website/ /media/az/SamsungSSD/Website-Backup/
   rsync-synchronize ~/install-client/ /media/az/SamsungSSD/Install-Client-Backup/
@@ -170,6 +171,5 @@ printfile() {
 
 #-- Start fzf from home directory
 export FZF_DEFAULT_COMMAND="fdfind . $HOME"
-
 
 
