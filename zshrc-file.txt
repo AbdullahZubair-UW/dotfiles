@@ -144,6 +144,7 @@ p() {
 }
 bindkey -s "^p" 'p^M'
 
+#--- Backup function that backs up files when Samsung SSD is plugged in.
 backup-SSD() {
   rsync-synchronize ~/uwaterloo/ /media/az/SamsungSSD/UWaterloo-Backup/
   rsync-synchronize ~/.config/ /media/az/SamsungSSD/Config-Backup/
@@ -152,7 +153,23 @@ backup-SSD() {
   rsync-synchronize ~/install-client/ /media/az/SamsungSSD/Install-Client-Backup/
 }
 
+
+#--- Print function that first asks for cropping and then prints to letter.
+printfile() {
+  echo "Do you want to crop the file?"
+  select yn in "Yes" "No"; do
+      case $yn in
+          Yes ) pdfcrop "$1" "$1"; break;;
+          No ) break;;
+      esac
+  done
+
+  echo "Your file is printing...."
+  lpr -P Brother_HL-L2390DW -o fit-to-page -o media=letter -o print-quality=5 "$1"
+}
+
 #-- Start fzf from home directory
 export FZF_DEFAULT_COMMAND="fdfind . $HOME"
+
 
 
