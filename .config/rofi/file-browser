@@ -1,0 +1,7 @@
+cmd     "zathura"
+oc-cmd     "vim"
+depth      5
+dir "~/uwaterloo"
+/* resume      */
+/* open-parent-as-self */
+/* oc-search-path */
