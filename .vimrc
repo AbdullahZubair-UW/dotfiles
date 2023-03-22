@@ -20,7 +20,6 @@ let mapleader = "\<Space>"
 ""keybindings 
 inoremap {<CR>  {<CR>}<Esc>O
 imap jk    <Esc>
-imap <C-w> <esc>:w<CR>
 inoremap {}     {}
 set belloff=all
 nnoremap <Leader>w :w<CR>
@@ -89,16 +88,25 @@ let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
 "SpellCheck Stuff
 hi clear SpellBad
 hi SpellBad cterm=underline
-" Set style for gVim
-hi SpellBad gui=undercurl
-
 setlocal spell
 set spelllang=en_us
 set spellfile=~/.vim/spell/en.utf-8.add
 inoremap <C-s> <c-g>u<Esc>[s1z=`]a<c-g>u
 
-set termguicolors
+" Set style for gVim
+hi SpellBad gui=undercurl
 
+" Theme settings
+set termguicolors
 set background=dark
-" colorscheme hyper
+ " colorscheme hyper
+
+" Asymptote function
+command! -nargs=1 Silent execute ':silent !'.<q-args> | execute ':redraw!'
+imap <C-w> <esc>:w<CR>:Silent asy %<CR>
+
+
+
+
+
 
