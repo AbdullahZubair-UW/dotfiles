@@ -7,9 +7,11 @@ export ZSH="$HOME/.oh-my-zsh"
 ### EXPORT
 export TERM="xterm-256color"                      # getting proper colors
 export HISTORY_IGNORE="(ls|cd|pwd|exit|sudo reboot|history|cd -|cd ..)"
-export EDITOR="nvim"              # $EDITOR use Emacs in terminal
+export EDITOR="vim"              # $EDITOR use Emacs in terminal
 
-export PATH=$HOME/.emacs.d/bin:$PATH export PATH=$HOME/.local/bin:$PATH export PATH=$HOME/.cargo/bin:$PATH
+export PATH=$HOME/.emacs.d/bin:$PATH 
+export PATH=$HOME/.local/bin:$PATH 
+export PATH=$HOME/.cargo/bin:$PATH
 export PATH="$PATH:'yarn global bin'"
 
 # For Dotfiles bare stuff.
@@ -148,13 +150,15 @@ bindkey -s "^p" 'p^M'
 backup-SSD() {
   rsync-synchronize ~/uwaterloo/ /media/az/SamsungSSD/UWaterloo-Backup/
   rsync-synchronize ~/.config/ /media/az/SamsungSSD/Config-Backup/
+  git -C ~/dotfiles/ pull
   rsync-synchronize ~/dotfiles/ /media/az/SamsungSSD/dotfiles-Backup/
   rsync-synchronize ~/teaching/ /media/az/SamsungSSD/Teaching-Backup/
   rsync-synchronize ~/Website/ /media/az/SamsungSSD/Website-Backup/
   rsync-synchronize ~/install-client/ /media/az/SamsungSSD/Install-Client-Backup/
 }
 
-#Testing backup funtion another
+
+#Testing backup funtion
 
 #--- Print function that first asks for cropping and then prints to letter.
 printfile() {
@@ -173,6 +177,15 @@ printfile() {
 #--- Updates my zshrc-file.tx when changes occur
 update-zshrc(){
   cat ~/.zshrc > ~/zshrc-file.txt
+}
+
+#--- Z-command for vim
+# Custom fuzzy completion for "vim" command
+#   e.g. vim **<TAB>
+_fzf_complete_vim() {
+  _fzf_complete --multi --reverse --prompt="vim> " -- "$@" < <(
+      cat ~/.viminfo | grep '^>' | sed 's/^> //'
+  )
 }
 
 #-- Start fzf from home directory
