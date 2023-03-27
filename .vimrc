@@ -67,6 +67,7 @@ call plug#begin()
   Plug 'tomasiser/vim-code-dark'
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
   Plug 'junegunn/fzf.vim'
+		Plug 'dracula/vim', { 'as': 'dracula' }
   Plug 'lunarvim/darkplus.nvim'
 call plug#end()
 
@@ -99,7 +100,7 @@ hi SpellBad gui=undercurl
 " Theme settings
 set termguicolors
 set background=dark
- " colorscheme hyper
+colorscheme dracula
 
 " Asymptote function
 command! -nargs=1 Silent execute ':silent !'.<q-args> | execute ':redraw!'
