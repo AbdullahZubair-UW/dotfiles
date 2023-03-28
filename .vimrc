@@ -99,8 +99,8 @@ hi SpellBad gui=undercurl
 
 " Theme settings
 set termguicolors
-set background=dark
-colorscheme dracula
+set background=light
+colorscheme gruvbox8_soft
 
 " Asymptote function
 command! -nargs=1 Silent execute ':silent !'.<q-args> | execute ':redraw!'

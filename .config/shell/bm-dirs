@@ -4,6 +4,10 @@ down   ${XDG_DOWNLOAD_DIR:-$HOME/Downloads}
 doc   ${XDG_DOCUMENTS_DIR:-$HOME/Documents}
 uw   ${XDG_DOCUMENTS_DIR:-$HOME/uwaterloo}
 365   ${XDG_DOCUMENTS_DIR:-$HOME/uwaterloo/UW-4B/PMATH 365}
+365/L   ${XDG_DOCUMENTS_DIR:-$HOME/uwaterloo/UW-4B/PMATH365/lecturenotes-365}
+365/B   ${XDG_DOCUMENTS_DIR:-$HOME/uwaterloo/UW-4B/PMATH365/Books-365}
+467/L   ${XDG_DOCUMENTS_DIR:-$HOME/uwaterloo/UW-4B/PMATH467/lecturenotes-467}
+467/B   ${XDG_DOCUMENTS_DIR:-$HOME/uwaterloo/UW-4B/PMATH467/Books-467}
 467   ${XDG_DOCUMENTS_DIR:-$HOME/uwaterloo/UW-4B/PMATH 467}
 h   $HOME
 pp  ${XDG_PICTURES_DIR:-$HOME/Pictures}
