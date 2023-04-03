@@ -113,9 +113,9 @@ map o &mimeopen "$f"
 map bg setwallpaper
 map O $mimeopen --ask "$f"
 
-map mA rename # renaming starts at end
+map A rename # renaming starts at end
 map R push rename<c-u> # new rename (Proper Rename)
-# map I push A<c-a> # at the very beginning
+map I push A<c-a> # at the very beginning
 map i push A<a-b><a-b><a-f> # before extension
 map a push A<a-b> # after extension
 map B bulkrename

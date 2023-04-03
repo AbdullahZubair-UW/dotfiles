@@ -97,17 +97,12 @@ inoremap <C-s> <c-g>u<Esc>[s1z=`]a<c-g>u
 " Set style for gVim
 hi SpellBad gui=undercurl
 
-" Theme settings
-set termguicolors
-set background=light
-colorscheme gruvbox8_soft
-
 " Asymptote function
 command! -nargs=1 Silent execute ':silent !'.<q-args> | execute ':redraw!'
 imap <C-w> <esc>:w<CR>:Silent asy %<CR>
 
-
-
-
-
+" Theme settings
+set termguicolors
+set background=light
+colorscheme gruvbox8_soft
 
