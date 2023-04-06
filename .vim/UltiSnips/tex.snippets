@@ -512,28 +512,20 @@ snippet ** "cdot" iA
 \cdot 
 endsnippet
 
-priority 300
 context "math()"
-snippet INT "bounded integral" bA
-\int_{${1:}}^{${2:}} ${3:${VISUAL}}\, \dd $0
+snippet INT "bounded integral" i
+\int_{${1:}}^{${2:}} ${3:${VISUAL}}\, d $0
+endsnippet
+
+context "math()"
+snippet uINT "unbounded integral" i
+\int ${3:${VISUAL}} \, d $0
 endsnippet
 
 priority 300
 context "math()"
-snippet int "integral" bA
-\int ${3:${VISUAL}} \, \dd $0
-endsnippet
-
-priority 300
-context "math()"
-snippet IINT "Double integral" bA
-\iint_{${1:}} ${2:${VISUAL}} $0
-endsnippet
-
-priority 300
-context "math()"
-snippet iint "Double integral" b
-\int_{${1:}}^{${2:}} \int_{${3:}}^{${4:}} ${5:${VISUAL}} $0
+snippet IINT "Double integral" i
+\iint_{${1:}} ${2:${VISUAL}}\, d $0
 endsnippet
 
 snippet norm "real number norm" i
@@ -563,7 +555,7 @@ endsnippet
 
 priority 200
 context "math()"
-snippet '(?<!\\)(arcsin|arccos|arctan|arccot|arccsc|arcsec|pi|zeta)' "ln" rwA
+snippet '(?<!\\)(arcsin|arccos|arctan|arccot|arccsc|arcsec|zeta)' "ln" rwA
 \\`!p snip.rv = match.group(1)`
 endsnippet
 
