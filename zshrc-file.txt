@@ -188,7 +188,21 @@ _fzf_complete_vim() {
   )
 }
 
+#--- Switches to a solarized theme.
+light-theme(){
+  cat ~/.config/alacritty/colorschemes/Gruvbox_light.yml > ~/.config/alacritty/colors.yml
+  cat ~/Templates/light-vim.txt > ~/.vimrc
+}
+
+#--- Switches to a dark (default) theme.
+dark-theme(){
+  cat ~/.config/alacritty/colorschemes/Hyper.yml > ~/.config/alacritty/colors.yml
+  cat ~/Templates/dark-vim.txt > ~/.vimrc
+}
+
 #-- Start fzf from home directory
 export FZF_DEFAULT_COMMAND="fdfind . $HOME"
 
 
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
