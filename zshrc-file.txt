@@ -154,6 +154,7 @@ backup-SSD() {
   rsync-synchronize ~/dotfiles/ /media/az/SamsungSSD/dotfiles-Backup/
   rsync-synchronize ~/teaching/ /media/az/SamsungSSD/Teaching-Backup/
   rsync-synchronize ~/Website/ /media/az/SamsungSSD/Website-Backup/
+  rsync-synchronize ~/Documents/ /media/az/SamsungSSD/PC-Documents-Backup/
   rsync-synchronize ~/install-client/ /media/az/SamsungSSD/Install-Client-Backup/
 }
 
