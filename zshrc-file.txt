@@ -180,6 +180,12 @@ update-zshrc(){
   cat ~/.zshrc > ~/zshrc-file.txt
 }
 
+
+#--- Syncs my local Website repo to my website server
+update-website(){
+  rsync-synchronize ~/Website/ root@azuwaterloo.com:/var/www/azuwaterloo
+}
+
 #--- Z-command for vim
 # Custom fuzzy completion for "vim" command
 #   e.g. vim **<TAB>
