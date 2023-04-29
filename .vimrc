@@ -46,7 +46,6 @@ vmap <silent> <expr> p <sid>Repl()
 nnoremap ,hwk :-1read ~/.vim/.hwk.tex<CR>7j18li
 nnoremap ,cite :-1read ~/.vim/.cite.tex<CR>
 
-
 set nocompatible
 filetype off   
 set rtp+=~/.vim/bundle/Vundle.vim
