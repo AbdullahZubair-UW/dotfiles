@@ -48,6 +48,7 @@ nnoremap ,cite :-1read ~/.vim/.cite.tex<CR>
 
 set nocompatible
 filetype off   
+set rtp+=/usr/local/opt/fzf
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()  
 Plugin 'VundleVim/Vundle.vim'
@@ -63,12 +64,13 @@ call plug#begin()
   Plug 'tpope/vim-commentary'
   Plug 'ryanoasis/vim-devicons'
   Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-  Plug 'tomasiser/vim-code-dark'
-  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
-  Plug 'junegunn/fzf.vim'
+		Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+		Plug 'junegunn/fzf.vim'
 		Plug 'dracula/vim', { 'as': 'dracula' }
   Plug 'lunarvim/darkplus.nvim'
 call plug#end()
+
+let g:fzf_preview_window = ['right,50%', 'ctrl-/']
 
 "Turn off Code folding
 let g:vimtex_fold_enabled =0

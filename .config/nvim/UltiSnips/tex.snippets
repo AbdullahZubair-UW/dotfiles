@@ -82,19 +82,6 @@ snippet alenum "Alphabetical Enumerate" bA
 \end{enumerate}
 endsnippet
 
-
-snippet item "Itemize" bA
-\begin{itemize}
-	\item $0
-\end{itemize}
-endsnippet
-
-snippet desc "Description" bA
-\begin{description}
-	\item[$1] $0
-\end{description}
-endsnippet
-
 snippet thrm "Theorem" bA
 \begin{thrm}
 		$0
@@ -121,14 +108,16 @@ snippet NOTN "Remark" b
 \end{notn}
 endsnippet
 
-
-
 snippet pac "Package" b
 \usepackage[${1:options}]{${2:package}}$0
 endsnippet
 
 snippet => "implies" Ai
 \implies
+endsnippet
+
+snippet _> "mapsto" Ai
+\mapsto
 endsnippet
 
 snippet =< "implied by" Ai
@@ -155,10 +144,6 @@ ${1:${VISUAL}}
 .\] $0
 endsnippet
 
-snippet il "Math" wA
-\(${1:${VISUAL}}\) $0
-endsnippet
-
 snippet ali "Align" bA
 \begin{align*}
 	${1:${VISUAL}}
@@ -166,15 +151,16 @@ snippet ali "Align" bA
 endsnippet
 
 snippet qstn "Question" bA
+\setcounter{qstn}{${1:${VISUAL}}}
 \begin{qstn}
-	${1:${VISUAL}}
+	${0:${VISUAL}}
 \end{qstn}
 endsnippet
 
 snippet proof "Question" b
-\begin{proof}
+\begin{Proof}
 	${1:${VISUAL}}
-\end{proof}
+\end{Proof}
 endsnippet
 
 snippet soln "Solution" bA
@@ -183,6 +169,13 @@ snippet soln "Solution" bA
 \end{solution}
 endsnippet
 
+snippet Hsoln "Line Solution" bA
+\noindent\hrulefill
+\begin{solution}
+	${1:${VISUAL}}
+\end{solution}
+\noindent\hrulefill
+endsnippet
 
 snippet STEP "Solution" bA
 \begin{step}
@@ -295,10 +288,6 @@ snippet bmat "bmat" iA
 \begin{bmatrix} $1 \end{bmatrix} $0
 endsnippet
 
-snippet () "left( right)" i
-\left( ${1:${VISUAL}} \right) $0
-endsnippet
-
 snippet lr "left( right)" i
 \left( ${1:${VISUAL}} \right) $0
 endsnippet
@@ -332,7 +321,11 @@ snippet conj "conjugate" i
 endsnippet
 
 snippet sum "sum" w
-\sum_{n=${1:1}}^{${2:\infty}} ${3:a_n z^n}
+\sum_{$1}^{${2:\infty}} ${3:a_n}
+endsnippet
+
+snippet dsum "sum" w
+\displaystyle \sum_{$1}^{${2:\infty}} ${3:a_n}
 endsnippet
 
 snippet taylor "taylor" w
@@ -355,8 +348,14 @@ snippet part "d/dx" w
 \frac{\partial ${1:V}}{\partial ${2:x}} $0
 endsnippet
 
-snippet SQ "\sqrt{}" iA
+context "math()"
+snippet sq "\sqrt{}" iA
 \sqrt{${1:${VISUAL}}} $0
+endsnippet
+
+context "math()"
+snippet tl "\widetilde" iA
+\widetilde
 endsnippet
 
 priority 100
@@ -365,21 +364,19 @@ snippet choose "n Choose k" iA
 \binom{$1}{$2}$0
 endsnippet
 
+context "math()"
 snippet sr "^2" iA
 ^2
 endsnippet
 
+context "math()"
 snippet cb "^3" iA
 ^3
 endsnippet
 
+context "math()"
 snippet dt "to the ... power" iA
 ^{$1}$0
-endsnippet
-
-context "math()"
-snippet rd "to the ... power" iA
-^{($1)}$0
 endsnippet
 
 snippet __ "subscript" iA
@@ -422,6 +419,7 @@ endsnippet
 snippet xii "xi" iA
 x_{i}
 endsnippet
+
 
 snippet yii "yi" iA
 y_{i}
@@ -469,22 +467,36 @@ snippet LC "mathcal" iA
 \mathcal{$1}$0
 endsnippet
 
+
 snippet bf "mathcal" iA
 \textbf{$1}$0
-endsnippet
-
-snippet tit "textit" iA
-\textit{$1}$0
 endsnippet
 
 snippet EU "euscript" iA
 \EuScript{$1}$0
 endsnippet
 
+context "math()"
 snippet sup "supremum" i
 \operatorname{sup}$0
 endsnippet
 
+context "math()"
+snippet to "longrightarrow" i
+\longrightarrow$0
+endsnippet
+
+context "math()"
+snippet ord "order" i
+\ord($1)$0
+endsnippet
+
+context "math()"
+snippet GEN "Generator PMATH 347" iA
+\expval{$1}$0
+endsnippet
+
+context "math()"
 snippet inf "infemum" i
 \operatorname{inf}$0
 endsnippet
@@ -507,19 +519,20 @@ snippet ** "cdot" iA
 \cdot 
 endsnippet
 
-priority 300
-snippet INT "integral" bA
-\int_{${1:}}^{${2:}} ${3:${VISUAL}} $0
+context "math()"
+snippet INT "bounded integral" i
+\int_{${1:}}^{${2:}} ${3:${VISUAL}}\, d $0
+endsnippet
+
+context "math()"
+snippet uINT "unbounded integral" i
+\int ${3:${VISUAL}} \, d $0
 endsnippet
 
 priority 300
-snippet IINT "Double integral" bA
-\iint_{${1:}} ${2:${VISUAL}} $0
-endsnippet
-
-priority 300
-snippet iint "Double integral" b
-\int_{${1:}}^{${2:}} \int_{${3:}}^{${4:}} ${5:${VISUAL}} $0
+context "math()"
+snippet IINT "Double integral" i
+\iint_{${1:}} ${2:${VISUAL}}\, d $0
 endsnippet
 
 snippet norm "real number norm" i
@@ -530,21 +543,26 @@ snippet nn "vector norm" i
 \norm{$1}$0
 endsnippet
 
+snippet dd "vector dist" i
+\dist($1)$0
+endsnippet
+
+
 priority 100
 context "math()"
-snippet '(?<!\\)(sin|cos|arccot|cot|csc|ln|log|exp|star|perp)' "ln" rwA
+snippet '(?<!\\)(sin|cos|arccot|cot|csc|ln|log|exp|pi|star|perp)' "ln" rwA
 \\`!p snip.rv = match.group(1)`
 endsnippet
 
 context "math()"
-snippet odv "Ordinary Derivative" 
-\\odv{$1}{$2}$0
+snippet dv "Derivative" iA
+\dv{$1}{$2}$0
 endsnippet
 
 
 priority 200
 context "math()"
-snippet '(?<!\\)(arcsin|arccos|arctan|arccot|arccsc|arcsec|pi|zeta|int)' "ln" rwA
+snippet '(?<!\\)(arcsin|arccos|arctan|arccot|arccsc|arcsec|zeta)' "ln" rwA
 \\`!p snip.rv = match.group(1)`
 endsnippet
 
@@ -573,6 +591,7 @@ snippet compl "complement" iA
 ^{c}
 endsnippet
 
+context "math()"
 snippet \\\ "setminus" iA
 \setminus
 endsnippet
@@ -599,7 +618,8 @@ snippet || "mid" iA
 endsnippet
 
 
-snippet cc "subset" iA
+context "math()"
+snippet cc "subset" Ai
 \subseteq 
 endsnippet
 
@@ -652,6 +672,10 @@ snippet <! "normal" iA
 \triangleleft 
 endsnippet
 
+snippet :: "colon in set" iA
+\colon
+endsnippet
+
 snippet <> "hokje" iA
 \diamond 
 endsnippet
@@ -662,11 +686,10 @@ snippet '(?<!i)sts' "text subscript" irA
 _\text{$1} $0
 endsnippet
 
-snippet tt "text" iA
+snippet tt "text" i
 \text{$1}$0
 endsnippet
 
-context "math()"
 snippet tit "text" i
 \textit{$1}$0
 endsnippet
@@ -705,12 +728,6 @@ snippet "([a-zA-Z])bar" "bar" riA
 \overline{`!p snip.rv=match.group(1)`}
 endsnippet
 
-priority 10
-context "math()"
-snippet "hat" "hat" riA
-\hat{$1}$0
-endsnippet
-
 priority 100
 context "math()"
 snippet "([a-zA-Z])hat" "hat" riA
@@ -719,11 +736,6 @@ endsnippet
 
 snippet letw "let omega" iA
 Let $\Omega \subset \C$ be open.
-endsnippet
-
-
-snippet HH "H" iA
-\mathbb{H}
 endsnippet
 
 snippet DD "D" iA
