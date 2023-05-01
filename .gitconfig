@@ -12,3 +12,6 @@
 	stat = !bash ~/scripts/git-status ~/
   ;Pushes all unchanged ones from git stat command
 	update = !bash ~/scripts/git-update ~/
+[safe]
+	directory = local-website
+	directory = /home/az/local-website
