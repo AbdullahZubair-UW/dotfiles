@@ -48,9 +48,20 @@
 \newtheorem{prop}{Proposition}[chapter]
 
 \theoremstyle{definition}
+\theoremstyle{proof}
 \newtheorem{defn}{Definition}[chapter]
 \newtheorem{ex}{Example}[chapter]
 \newtheorem{rem}{Remark}[chapter]
+
+
+% \newenvironment{solution}
+%   {\renewcommand\qedsymbol{}\begin{proof}[\textnormal{\textbf{Solution.}}]}
+%   {\end{proof}}
+\newenvironment{solution}
+  {\renewcommand\qedsymbol{$\blacksquare$}\begin{proof}[\textnormal{\textbf{Solution.}}]}
+  {\end{proof}}
+
+
 
 \declaretheoremstyle[
 headfont=\color{blue}\normalfont\bfseries,
@@ -84,7 +95,6 @@ bodyfont=\normalfont,
 postheadspace=.5em,
 ]{casestyle}%
 
-\declaretheorem[name={Solution},numbered=no,style=solnstyle]{solution} 
 \declaretheorem[name={Lemma},numbered=no,style=claimstyle]{lem} 
 \declaretheorem[name={Case},numbered=yes,style=casestyle]{case} %
 \declaretheorem[name={Question},numbered=yes,style=qstnstyle]{qstn} %
