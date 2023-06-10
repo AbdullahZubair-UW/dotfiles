@@ -525,6 +525,11 @@ snippet INT "bounded integral" i
 endsnippet
 
 context "math()"
+snippet OINT "closed loop integral" i
+\oint_{${1:}} ${2:${VISUAL}}\, d $0
+endsnippet
+
+context "math()"
 snippet uINT "unbounded integral" i
 \int ${3:${VISUAL}} \, d $0
 endsnippet
