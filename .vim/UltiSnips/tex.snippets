@@ -76,8 +76,14 @@ snippet enum "Enumerate" bA
 \end{enumerate}
 endsnippet
 
-snippet alenum "Alphabetical Enumerate" bA
+snippet alenum "Alphabetical Enumerate with align" bA
 \begin{enumerate}[label=(\alph*), leftmargin=*,align=left]
+	\item $0
+\end{enumerate}
+endsnippet
+
+snippet ENUM "Alphabetical Enumerate" bA
+\begin{enumerate}[label=(\alph*)]
 	\item $0
 \end{enumerate}
 endsnippet
