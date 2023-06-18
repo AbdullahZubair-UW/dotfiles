@@ -31,6 +31,9 @@ nmap <Leader>P "+P
 vmap <Leader>p "+p
 vmap <Leader>P "+P
 
+imap <C-l> <Plug>IMAP_JumpForward
+nmap <C-l> <Plug>IMAP_JumpForward
+
 " vp doesn't replace paste buffer
 function! RestoreRegister()
  let @" = s:restore_reg
@@ -53,26 +56,19 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()  
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'valloric/YouCompleteMe', { 'do': './install.py --tern-completer' }
-Plugin 'preservim/nerdtree'
 call vundle#end()            
 filetype plugin indent on   
 
 call plug#begin()
   Plug 'flazz/vim-colorschemes'
-  Plug 'lervag/vimtex'
-  Plug 'SirVer/ultisnips'
   Plug 'tpope/vim-commentary'
-  Plug 'ryanoasis/vim-devicons'
-  Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+  Plug 'lervag/vimtex'
+ 	Plug 'ryanoasis/vim-devicons'
   Plug 'tomasiser/vim-code-dark'
-  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
-  Plug 'junegunn/fzf.vim'
-		Plug 'dracula/vim', { 'as': 'dracula' }
+	Plug 'dracula/vim', { 'as': 'dracula' }
   Plug 'lunarvim/darkplus.nvim'
+	Plug 'vim-latex/vim-latex'
 call plug#end()
-
-"Turn off Code folding
-let g:vimtex_fold_enabled =0
 
 let g:vimtex_view_method = 'zathura'
 let g:vimtex_view_general_viewer = 'zathura'
@@ -80,11 +76,6 @@ let g:vimtex_compiler_method = 'latexmk'
 let g:vimtex_quickfix_autoclose_after_keystrokes=1
 let g:vimtex_quickfix_open_on_warning=0
 
-let g:UltiSnipsExpandTrigger="<c-e>"
-let g:UltiSnipsJumpForwardTrigger ='<c-l>'
-" list all snippets for current filetype
-" let g:UltiSnipsListSnippets="<c-l>"
-let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
 
 "SpellCheck Stuff
 hi clear SpellBad
@@ -104,5 +95,7 @@ imap <C-w> <esc>:w<CR>:Silent asy %<CR>
 " Theme settings
 set termguicolors
 set background=dark
+colorscheme gruvbox8_hard
+
 
 
