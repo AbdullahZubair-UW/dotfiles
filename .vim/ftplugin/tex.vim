@@ -125,7 +125,7 @@ set iskeyword+=_ " Add _ to autocomplete list
 " Wrap in dollar signs
 nnoremap <localleader>w i$<Esc>ea$<Esc>
 
-set conceallevel=2
+" set conceallevel=2
 
 " Leader keys that are defined for me
 " <Leader>ll -> pdflatex compile
