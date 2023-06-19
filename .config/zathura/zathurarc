@@ -1,7 +1,6 @@
 set window-height 3000
 set window-width 3000
 
-map w adjust_window width
 set notification-error-bg       "#1d2021" # bg
 set notification-error-fg       "#fb4934" # bright:red
 set notification-warning-bg     "#1d2021" # bg
@@ -50,6 +49,7 @@ unmap f
 map f toggle_fullscreen
 map [fullscreen] f toggle_fullscreen
 set font "inconsolata 12"
+map w adjust_window width
 
 
 # One page per row by default
