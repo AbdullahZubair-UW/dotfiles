@@ -94,7 +94,6 @@ return packer.startup(function(use)
   
   -- LaTeX
   -- use 'SirVer/ultisnips'
-  use 'lervag/vimtex'
   use 'vim-latex/vim-latex'
 
   -- Git

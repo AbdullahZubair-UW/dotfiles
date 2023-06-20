@@ -258,11 +258,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/az/.local/share/nvim/site/pack/packer/start/vim-latex",
     url = "https://github.com/vim-latex/vim-latex"
-  },
-  vimtex = {
-    loaded = true,
-    path = "/home/az/.local/share/nvim/site/pack/packer/start/vimtex",
-    url = "https://github.com/lervag/vimtex"
   }
 }
 

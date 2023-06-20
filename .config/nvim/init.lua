@@ -20,7 +20,6 @@ require "user.indentline"
 require "user.alpha"
 require "user.lsp"
 require "user.dap"
-require "user.vimtex"
 require "user.vim-latex"
 require("cmp_dictionary").setup({
 		dic = {
