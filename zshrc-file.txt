@@ -98,6 +98,7 @@ alias mv='mv -i'
 # alias rm='rm -i'
 
 # vim and emacs
+alias v="nvim"
 alias em="/usr/bin/emacs -nw"
 alias emacs="emacsclient -c -a 'emacs'"
 
@@ -105,7 +106,7 @@ alias emacs="emacsclient -c -a 'emacs'"
 #FZF - Fuzzy Finder 
 . ~/z.sh
 
-xset r rate 150 100
+xset r rate 140 100
 xmodmap ~/.Xmodmap
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -183,7 +184,13 @@ update-zshrc(){
 
 #--- Syncs my local Website repo to my website server
 update-website(){
-  rsync-synchronize ~/Website/ root@azuwaterloo.com:/var/www/azuwaterloo
+  rsync ~/uwaterloo/UW-3B/"MATH 237"/237-notes/notes.pdf root@azuwaterloo.com:/var/www/azuwaterloo/Math/MATH237notes.pdf
+  rsync ~/uwaterloo/UW-3B/"PMATH 340"/340-notes/notes.pdf root@azuwaterloo.com:/var/www/azuwaterloo/Math/PMATH340notes.pdf
+  rsync ~/uwaterloo/UW-4A/"PMATH 347"/347-notes/notes.pdf root@azuwaterloo.com:/var/www/azuwaterloo/Math/PMATH347notes.pdf
+  rsync ~/uwaterloo/UW-4A/"PMATH 333"/333-notes/notes.pdf root@azuwaterloo.com:/var/www/azuwaterloo/Math/PMATH333notes.pdf
+  rsync ~/uwaterloo/UW-4A/"AMATH 250"/250-notes/notes.pdf root@azuwaterloo.com:/var/www/azuwaterloo/Math/AMATH250notes.pdf
+  rsync ~/uwaterloo/UW-4B/PMATH365/365-notes/notes.pdf root@azuwaterloo.com:/var/www/azuwaterloo/Math/PMATH365notes.pdf
+  rsync ~/uwaterloo/UW-4B/PMATH467/467-notes/notes.pdf root@azuwaterloo.com:/var/www/azuwaterloo/Math/PMATH467notes.pdf
 }
 
 #--- Z-command for vim
@@ -193,18 +200,6 @@ _fzf_complete_vim() {
   _fzf_complete --multi --reverse --prompt="vim> " -- "$@" < <(
       cat ~/.viminfo | grep '^>' | sed 's/^> //'
   )
-}
-
-#--- Switches to a solarized theme.
-light-theme(){
-  cat ~/.config/alacritty/colorschemes/Gruvbox_light.yml > ~/.config/alacritty/colors.yml
-  cat ~/Templates/light-vim.txt > ~/.vimrc
-}
-
-#--- Switches to a dark (default) theme.
-dark-theme(){
-  cat ~/.config/alacritty/colorschemes/Hyper.yml > ~/.config/alacritty/colors.yml
-  cat ~/Templates/dark-vim.txt > ~/.vimrc
 }
 
 #-- Start fzf from home directory

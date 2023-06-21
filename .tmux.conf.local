@@ -354,7 +354,7 @@ tmux_conf_copy_to_os_clipboard=false
 # this is the place to override or undo settings
 set -s escape-time 0                     # faster command sequences
 set -sg repeat-time 0                   # increase repeat timeout
-
+set -g status-left "#{pane_current_path}"
 # increase history size
 #set -g history-limit 10000
 

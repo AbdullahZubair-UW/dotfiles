@@ -1,6 +1,8 @@
-syntax on
+" syntax on
 filetype plugin on
 filetype indent on
+
+
 set textwidth=165
 set number
 set nowrap
@@ -16,6 +18,7 @@ set path=+**
 set wildmenu
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let mapleader = "\<Space>"
+let maplocalleader = "."
 
 ""keybindings 
 inoremap {<CR>  {<CR>}<Esc>O
@@ -62,12 +65,12 @@ filetype plugin indent on
 call plug#begin()
   Plug 'flazz/vim-colorschemes'
   Plug 'tpope/vim-commentary'
-  Plug 'lervag/vimtex'
+  " Plug 'lervag/vimtex'
  	Plug 'ryanoasis/vim-devicons'
   Plug 'tomasiser/vim-code-dark'
-	Plug 'dracula/vim', { 'as': 'dracula' }
-  Plug 'lunarvim/darkplus.nvim'
-	Plug 'vim-latex/vim-latex'
+		Plug 'dracula/vim', { 'as': 'dracula' }
+		Plug 'vim-latex/vim-latex'
+		Plug 'tomasiser/vim-code-dark'
 call plug#end()
 
 let g:vimtex_view_method = 'zathura'
@@ -95,4 +98,6 @@ imap <C-w> <esc>:w<CR>:Silent asy %<CR>
 " Theme settings
 set termguicolors
 set background=dark
+set t_Co=256
 colorscheme gruvbox8_hard
+
