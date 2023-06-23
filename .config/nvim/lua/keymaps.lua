@@ -39,14 +39,11 @@ keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
 keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)
 
 -- Better paste
-keymap("v", "p", '"_dP', opts)
+keymap("v", "p", "P", opts)
 
 -- Insert --
 -- Press jk fast to enter
 keymap("i", "jk", "<ESC>", opts)
-
--- Uploading/Downloading Website files
-keymap("n", "<F7>", ":!sh ~/Website/push.sh<CR>", opts)
 
 -- Visual --
 -- Stay in indent mode
@@ -55,6 +52,8 @@ keymap("v", ">", ">gv", opts)
 
 -- Spelling --
 keymap("i", "<C-s>", "<c-g>u<Esc>[s1z=`]a<c-g>u", opts)
+
+-- Plugins --
 
 -- NvimTree
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
@@ -69,8 +68,12 @@ keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
 keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
 
 -- Comment
-keymap("n", "<leader>/", "<cmd>lua require('Comment.api').toggle_current_linewise()<CR>", opts)
-keymap("x", "<leader>/", '<ESC><CMD>lua require("Comment.api").toggle_linewise_op(vim.fn.visualmode())<CR>')
+keymap("n", "<leader>/", "<cmd>lua require('Comment.api').toggle.linewise.current()<CR>", opts)
+keymap("x", "<leader>/", "<esc><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>", opts)
+
+-- Vim-LaTeX
+keymap("n", "<C-l>", "<Plug>IMAP_JumpForward", opts)
+keymap("i", "<C-l>", "<Plug>IMAP_JumpForward", opts)
 
 -- DAP
 keymap("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", opts)
@@ -83,6 +86,5 @@ keymap("n", "<leader>dl", "<cmd>lua require'dap'.run_last()<cr>", opts)
 keymap("n", "<leader>du", "<cmd>lua require'dapui'.toggle()<cr>", opts)
 keymap("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", opts)
 
--- Vim-LaTeX
-keymap("i", "<C-l>", "<Plug>IMAP_JumpForward",opts)
-keymap("n", "<C-l>", "<Plug>IMAP_JumpForward",opts)
+-- Lsp
+keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", opts)

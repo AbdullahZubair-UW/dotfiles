@@ -1,4 +1,6 @@
--- vim.g.Tex_FoldedSections="chapter"
--- vim.g.Tex_FoldedEnvironments=""
--- vim.g.Tex_FoldedMisc=""
+local M = {
+  "vim-latex/vim-latex",
+   lazy = false, -- already lazy loaded by virtue
+}
 
+return M
