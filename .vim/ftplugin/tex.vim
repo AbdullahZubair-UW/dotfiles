@@ -40,7 +40,7 @@ try
   call IMAP('.wfig ', "\\begin{wrapfigure}[<++>]{r}{<++>}\<CR>\\centering\<CR>\\includegraphics[<++>]{<++>}\<CR>\\caption{<++>}\<CR>\\label{fig:<++>}\<CR>\\end{wrapfigure}\<CR><++>", 'tex')
   call IMAP('.img ', "\\begin{center}\<CR>\\includegraphics[<++>]{<++>}\<CR>\\end{center}\<CR><++>", 'tex')
   call IMAP('.code ', "\\begin{lstlisting}\<CR><++>\<CR>\\end{lstlisting}\<CR><++>\<ESC>k<<", 'tex')
-  call IMAP('.mat ', "\\begin{bmatrix}\<CR><++>\<CR>\\end{bmatrix}<++>", 'tex')
+  call IMAP('.mat ', "\\begin{pmatrix}\<CR><++>\<CR>\\end{pmatrix}<++>", 'tex')
   call IMAP('.beg ', "\\begin{<++>}\<CR><++>\<CR>\\end{<++>}<++>", 'tex') " BEST IDEA EVER
 
   "Miscellaneous maps
@@ -54,7 +54,7 @@ try
   call IMAP('.symsum ', '\sum_{\text{sym}} ', 'tex')
   call IMAP('.cycprod ', '\prod_{\text{cyc}} ', 'tex')
   call IMAP('.symprod ', '\prod_{\text{sym}} ', 'tex')
-	call IMAP('bf', '\textbf{<++>}<++>', 'tex')
+	call IMAP('BF', '\textbf{<++>}<++>', 'tex')
 	call IMAP('tit', '\textit{<++>}<++>', 'tex')
 	call IMAP('set', "\\{<++>\\}<++>", 'tex')
 	call IMAP('mk', "\\(<++>\\)<++>", 'tex')
@@ -64,6 +64,7 @@ try
 	call IMAP('sqr', "\\sqrt{<++>}<++>", 'tex')
 	call IMAP('SQ', "\\sqrt[<++>]{<++>}<++>", 'tex')
 	call IMAP('sr', "^2", 'tex')
+	call IMAP('cc', "\\subseteq", 'tex')
 	call IMAP('**', "\\cdot ", 'tex')
 
   " amsthm environments defined in evan.sty
@@ -125,9 +126,3 @@ set iskeyword+=_ " Add _ to autocomplete list
 " Wrap in dollar signs
 nnoremap <localleader>w i$<Esc>ea$<Esc>
 
-" set conceallevel=2
-
-" Leader keys that are defined for me
-" <Leader>ll -> pdflatex compile
-" <Leader>lv -> latex viewer
-" <Leader>rf -> refresh folds (LaTeX)

@@ -65,13 +65,21 @@ filetype plugin indent on
 call plug#begin()
   Plug 'flazz/vim-colorschemes'
   Plug 'tpope/vim-commentary'
-  " Plug 'lervag/vimtex'
  	Plug 'ryanoasis/vim-devicons'
-  Plug 'tomasiser/vim-code-dark'
-		Plug 'dracula/vim', { 'as': 'dracula' }
 		Plug 'vim-latex/vim-latex'
 		Plug 'tomasiser/vim-code-dark'
+		Plug 'bling/vim-bufferline'
+  Plug 'preservim/nerdtree'
+		Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+		Plug 'junegunn/fzf.vim'
 call plug#end()
+
+"NERD TREE & Buffers
+nnoremap <leader>e :NERDTreeToggle<CR>
+
+nnoremap <S-l> :bnext<CR>
+nnoremap <S-h> :bprevious<CR>
+nnoremap <S-q> :bdelete!<CR>
 
 let g:vimtex_view_method = 'zathura'
 let g:vimtex_view_general_viewer = 'zathura'

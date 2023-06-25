@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Updates config files
-/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME su
+# /usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME su
 
 # Updates all git repos (update command is in git alias's)
 git update
