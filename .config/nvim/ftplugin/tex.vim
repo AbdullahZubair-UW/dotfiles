@@ -9,6 +9,7 @@ try
   call IMAP('SCH', 'SCH', 'tex')
   call IMAP('SSS', 'SSS', 'tex')
   call IMAP('SS2', 'SS2', 'tex')
+  call IMAP('SSE', 'SSE', 'tex')
   call IMAP('SPG', 'SPG', 'tex')
   call IMAP('SSP', 'SSP', 'tex')
 
@@ -57,7 +58,7 @@ try
 	call IMAP('BF', '\textbf{<++>}<++>', 'tex')
 	call IMAP('tit', '\textit{<++>}<++>', 'tex')
 	call IMAP('set', "\\{<++>\\}<++>", 'tex')
-	call IMAP('mk', "$<++>$<++>", 'tex')
+	call IMAP('mk', "\\(<++>\\)<++>", 'tex')
   call IMAP('dm', "\\[\<CR><++>\<CR>.\\]<++>", 'tex')
 	call IMAP('CHOOSE', "\binom{<++>}{<++>}<++>", 'tex')
 	call IMAP('dt', "^{<++>}<++>", 'tex')
