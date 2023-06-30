@@ -29,7 +29,7 @@ try
   call IMAP('.block ', "\\begin{block}{<++>}\<CR><++>\<CR>\\end{block}<++>", 'tex')
   call IMAP('.center ', "\\begin{center}\<CR><++>\<CR>\\end{center}<++>", 'tex')
   call IMAP('.frame ', "\\begin{frame}\<CR>\\frametitle{<++>}\<CR><++>\<CR>\\end{frame}", 'tex')
-  call IMAP('.ali', "\\begin{align*}\<CR><++>\<CR>\\end{align*}<++>", 'tex')
+  call IMAP('.ali ', "\\begin{align*}\<CR><++>\<CR>\\end{align*}<++>", 'tex')
   call IMAP('.box ', "\\begin{mdframed}\<CR><++>\<CR>\\end{mdframed}<++>", 'tex')
   call IMAP('.diag ', "\\begin{diagram}\<CR><++>\<CR>\\end{diagram}<++>", 'tex')
   call IMAP('.cd ', "\\begin{center}\<CR>\\begin{tikzcd}\<CR><++>\<CR>\\end{tikzcd}\<CR>\\end{center}<++>\<ESC>k<<k<<k<<", 'tex')
@@ -66,7 +66,7 @@ try
 	call IMAP('.sq', "\\sqrt{<++>}<++>", 'tex')
 	call IMAP('.[sq', "\\sqrt[<++>]{<++>}<++>", 'tex')
 	call IMAP('sr', "^2", 'tex')
-	call IMAP('.cc', "\\subseteq", 'tex')
+	call IMAP('cc', "\\subseteq", 'tex')
   call IMAP('.bar', "\\overline{<++>}<++>", 'tex')
 	call IMAP('**', "\\cdot ", 'tex')
 
