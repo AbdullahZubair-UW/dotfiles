@@ -92,3 +92,16 @@ keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", opt
 --Tagbar
 keymap("n", "<F8>", ":TagbarToggle f<cr>", opts)
 
+--Template Inlcusion
+keymap("n", ",hwk", ":-1read ~/.vim/.hwk.tex<CR>12j18li", opts)
+
+
+
+
+
+
+
+
+
+
+

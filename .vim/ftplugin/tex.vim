@@ -1,11 +1,11 @@
-
 "TODO i think it might be time to switch packages
 try
   " Always use \dots
   call IMAP('...', '\dots', 'tex')
+  call IMAP('/p', '\phi', 'tex')
+  call IMAP('/P', '\Phi', 'tex')
 
   " Disable sections
-  call IMAP('SPA', 'SPA', 'tex')
   call IMAP('SCH', 'SCH', 'tex')
   call IMAP('SSS', 'SSS', 'tex')
   call IMAP('SS2', 'SS2', 'tex')
@@ -31,7 +31,7 @@ try
   call IMAP('.eblock ', "\\begin{exampleblock}{<++>}\<CR><++>\<CR>\\end{exampleblock}<++>", 'tex')
   call IMAP('.center ', "\\begin{center}\<CR><++>\<CR>\\end{center}<++>", 'tex')
   call IMAP('.frame ', "\\begin{frame}\<CR>\\frametitle{<++>}\<CR><++>\<CR>\\end{frame}", 'tex')
-  call IMAP('.align ', "\\begin{align*}\<CR><++>\<CR>\\end{align*}<++>", 'tex')
+  call IMAP('.ali', "\\begin{align*}\<CR><++>\<CR>\\end{align*}<++>", 'tex')
   call IMAP('.box ', "\\begin{mdframed}\<CR><++>\<CR>\\end{mdframed}<++>", 'tex')
   call IMAP('.diag ', "\\begin{diagram}\<CR><++>\<CR>\\end{diagram}<++>", 'tex')
   call IMAP('.cd ', "\\begin{center}\<CR>\\begin{tikzcd}\<CR><++>\<CR>\\end{tikzcd}\<CR>\\end{center}<++>\<ESC>k<<k<<k<<", 'tex')
@@ -54,17 +54,18 @@ try
   call IMAP('.symsum ', '\sum_{\text{sym}} ', 'tex')
   call IMAP('.cycprod ', '\prod_{\text{cyc}} ', 'tex')
   call IMAP('.symprod ', '\prod_{\text{sym}} ', 'tex')
-	call IMAP('BF', '\textbf{<++>}<++>', 'tex')
+	call IMAP('.bf', '\textbf{<++>}<++>', 'tex')
 	call IMAP('tit', '\textit{<++>}<++>', 'tex')
-	call IMAP('set', "\\{<++>\\}<++>", 'tex')
-	call IMAP('mk', "\\(<++>\\)<++>", 'tex')
+	call IMAP('.set', "\\{<++>\\}<++>", 'tex')
+	call IMAP('mk', "$<++>$<++>", 'tex')
   call IMAP('dm', "\\[\<CR><++>\<CR>.\\]<++>", 'tex')
 	call IMAP('CHOOSE', "\binom{<++>}{<++>}<++>", 'tex')
 	call IMAP('dt', "^{<++>}<++>", 'tex')
-	call IMAP('sqr', "\\sqrt{<++>}<++>", 'tex')
-	call IMAP('SQ', "\\sqrt[<++>]{<++>}<++>", 'tex')
+	call IMAP('.sq', "\\sqrt{<++>}<++>", 'tex')
+	call IMAP('.[sq', "\\sqrt[<++>]{<++>}<++>", 'tex')
 	call IMAP('sr', "^2", 'tex')
-	call IMAP('cc', "\\subseteq", 'tex')
+	call IMAP('.cc', "\\subseteq", 'tex')
+	call IMAP('.bar', "\\overline{<++>}<++>", 'tex')
 	call IMAP('**', "\\cdot ", 'tex')
 
   " amsthm environments defined in evan.sty
@@ -118,7 +119,7 @@ nnoremap <silent> <localleader>f :%s/\$\$/\\\[/<CR>:%s/\$\$/\\\]/<CR>
 let g:Tex_FoldedEnvironments='titlepage,abstract,asy,tikzpicture' " Folding of certain environments
 let g:Tex_DefaultTargetFormat='pdf'
 let g:Tex_Tex_CompileRule_pdf='latexmk -cd -pvc -f'
-let g:Tex_Leader='`'
+let g:Tex_Leader='/'
 let g:Tex_ViewRule_pdf='zathura'
 set iskeyword+=: " Autocomplete for fig: etc. references
 set iskeyword+=_ " Add _ to autocomplete list

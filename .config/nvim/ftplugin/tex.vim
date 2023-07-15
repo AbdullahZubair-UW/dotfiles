@@ -18,7 +18,7 @@ try
   " Enumeration environments
 	call IMAP('.SSE', '\section*{<++>}<++>', 'tex')
   call IMAP('ENUM', "\\begin{enumerate}\<CR>\\item <++>\<CR>\\end{enumerate}<++>\<ESC>k<<",'tex')
-  call IMAP('alenum', "\\begin{enumerate}[label=(\\alph*)]\<CR>\\item <++>\<CR>\\end{enumerate}<++>\<ESC>k<<",'tex')
+  call IMAP('alenum', "\\begin{enumerate}[label=(\alph*), leftmargin=*,align=left] \<CR>\\item <++>\<CR>\\end{enumerate}<++>\<ESC>k<<",'tex')
   call IMAP('ANUM', "\\begin{enumerate}[label=(\\alph*), leftmargin=*,align=left] \<CR>\\item <++>\<CR>\\end{enumerate}<++>\<ESC>k<<",'tex')
   call IMAP('itemize ', "\\begin{itemize}\<CR>\\ii <++>\<CR>\\end{itemize}<++>\<ESC>k<<",'tex')
 
@@ -68,6 +68,10 @@ try
 	call IMAP('sr', "^2", 'tex')
 	call IMAP('.cc', "\\subseteq", 'tex')
   call IMAP('.bar', "\\overline{<++>}<++>", 'tex')
+  call IMAP('.xx', "\\times", 'tex')
+  call IMAP('>=', "\\geq", 'tex')
+  call IMAP('<=', "\\leq", 'tex')
+  call IMAP('.xx', "\\times", 'tex')
 	call IMAP('**', "\\cdot ", 'tex')
 
   " Deferred to end because they're LONG.
