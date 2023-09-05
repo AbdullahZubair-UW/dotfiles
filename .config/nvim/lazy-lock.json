@@ -12,10 +12,10 @@
   "cmp-path": { "branch": "main", "commit": "91ff86cd9c29299a64f968ebb45846c485725f23" },
   "cmp_luasnip": { "branch": "master", "commit": "18095520391186d634a0045dacaa346291096566" },
   "dark_flat.nvim": { "branch": "main", "commit": "984ec39ea29d82ebc0afb60e29f850edcc8ec1eb" },
+  "darkplus.nvim": { "branch": "master", "commit": "7c236649f0617809db05cd30fb10fed7fb01b83b" },
   "friendly-snippets": { "branch": "main", "commit": "a6f7a1609addb4e57daa6bedc300f77f8d225ab7" },
   "indent-blankline.nvim": { "branch": "master", "commit": "73640233cca0da8e01aced8c1f9e63fd892128b7" },
   "lazy.nvim": { "branch": "main", "commit": "867528c0fec1f2908edd9539618e4b033203c954" },
-  "monokai-pro.nvim": { "branch": "master", "commit": "cb351c21a46e12df53e0650a5a1ee1b9d27b9a98" },
   "nvim-cmp": { "branch": "main", "commit": "cfafe0a1ca8933f7b7968a287d39904156f2c57d" },
   "nvim-tree.lua": { "branch": "master", "commit": "f5d970d4506f385b29534252d8c15a782fa53034" },
   "nvim-treesitter": { "branch": "master", "commit": "226c1475a46a2ef6d840af9caa0117a439465500" },
@@ -26,6 +26,5 @@
   "tagbar": { "branch": "master", "commit": "be563539754b7af22bbe842ef217d4463f73468c" },
   "telescope-file-browser.nvim": { "branch": "master", "commit": "e03ff55962417b69c85ef41424079bb0580546ba" },
   "telescope.nvim": { "branch": "master", "commit": "0e0600908d1ad5ac4992fa0ab578e23e9d9d6f37" },
-  "vim-latex": { "branch": "master", "commit": "5987380b4ff4c960c99c02df1d379a639ac461a7" },
-  "vscode.nvim": { "branch": "main", "commit": "05973862f95f85dd0564338a03baf61b56e1823f" }
+  "vim-latex": { "branch": "master", "commit": "5987380b4ff4c960c99c02df1d379a639ac461a7" }
 }
