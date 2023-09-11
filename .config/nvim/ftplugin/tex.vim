@@ -77,7 +77,7 @@ try
 	call IMAP('**', "\\cdot ", 'tex')
 
   " Deferred to end because they're LONG.
-  call IMAP('soln', "\\begin{proof}[Solution]\<CR><++>\<CR>\\end{proof}<++>", 'tex')
+  call IMAP('soln', "\\begin{solution}\<CR><++>\<CR>\\end{solution}<++>", 'tex')
   call IMAP('DEFN', "\\begin{defn}\<CR><++>\<CR>\\end{defn}<++>", 'tex')
   call IMAP('EX', "\\begin{ex}\<CR><++>\<CR>\\end{ex}<++>", 'tex')
   call IMAP('LEM', "\\begin{lem}\<CR><++>\<CR>\\end{lem}<++>", 'tex')

@@ -176,16 +176,20 @@ printfile() {
   echo "Do you want to crop the file?"
   select yn in "Yes" "No"; do
       case $yn in
-          Yes ) pdfcrop "$1" cropped-file.pdf; break;;
-          No ) break;;
+          Yes ) pdfcrop "$1" cropped-file.pdf; 
+																echo "How many copies?: "
+																read copies
+																echo "Proceeding to print ${copies} copies...."
+																lpr -P Brother_HL-L2390DW -# "${copies}" -o fit-to-page -o media=letter -o print-quality=5 cropped-file.pdf
+																rm cropped-file.pdf
+																break;;
+          No ) echo "How many copies?: ";
+															read copies;
+  													echo "Proceeding to print ${copies} copies....";
+  													lpr -P Brother_HL-L2390DW -# "${copies}" -o fit-to-page -o media=letter -o print-quality=5 "$1";
+															break;;
       esac
   done
-
-		echo "How many copies?: "
-		read copies
-  echo "Proceeding to print ${copies} copies...."
-  lpr -P Brother_HL-L2390DW -# "${copies}" -o fit-to-page -o media=letter -o print-quality=5 cropped-file.pdf
-		rm cropped-file.pdf
 }
 
 #--- Updates my zshrc-file.tx when changes occur
