@@ -1,7 +1,7 @@
 cmd     "zathura"
 oc-cmd     "vim"
 depth      5
-dir "~/uwaterloo"
+dir "~/teaching/2023-2024"
 /* resume      */
 /* open-parent-as-self */
 /* oc-search-path */

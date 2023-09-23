@@ -42,7 +42,7 @@ try
   call IMAP('.beg ', "\\begin{<++>}\<CR><++>\<CR>\\end{<++>}<++>", 'tex') " BEST IDEA EVER
 
   "Miscellaneous maps
-  call IMAP('<C-/>', '\frac{<++>}{<++>}<++>', 'tex')
+		call IMAP ('//', '\dfrac{<++>}{<++>}<++>', "tex")
   call IMAP('<<', '\left< <++>\right><++>', 'tex')
   call IMAP('||', '\left\lvert <++> \right\rvert<++>', 'tex')
   call IMAP('.floor ', '\left\lfloor <++> \right\rfloor<++>', 'tex')
