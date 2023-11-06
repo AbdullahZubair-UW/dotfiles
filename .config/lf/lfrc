@@ -56,6 +56,17 @@ cmd delete ${{
 	[ $ans = "y" ] && rm -rf -- $fx
 }}
 
+cmd pdfunite ${{
+	clear; tput cup $(($(tput lines)/3)); tput bold
+	set -f
+	printf "%s\n\t" "$fx"
+	printf "pdfunite?[y/N]"
+	read ans
+	printf "name?"
+	read name
+	[ $ans = "y" ] && pdfunite $fx "$name".pdf
+}}
+
 cmd moveto ${{
 	clear; tput cup $(($(tput lines)/3)); tput bold
 	set -f
@@ -103,6 +114,7 @@ map D delete
 map E extract
 map C copyto
 map M moveto
+map P pdfunite
 map <c-n> push :mkdir<space>
 map <c-r> reload
 map <c-s> set hidden!
