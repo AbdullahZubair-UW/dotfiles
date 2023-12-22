@@ -7,7 +7,7 @@
 git update
 
 # Updates uwaterloo dir at Docs
-rsync -avzu --delete -h --exclude='.git/' ~/uwaterloo/ ~/Documents/uwaterloo-backup/
+# rsync -avzu --delete -h --exclude='.git/' ~/uwaterloo/ ~/Documents/uwaterloo-backup/
 
 # Updates dotifles dir at Docs
 git -C ~/dotfiles/ pull
