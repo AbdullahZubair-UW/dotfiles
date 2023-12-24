@@ -79,6 +79,7 @@ alias fetch='git fetch'
 alias pull='git pull origin'
 alias push='git push origin'
 alias status='git status'  # 'status' is protected name so using 'stat' instead
+alias lg='lazygit'  # 'status' is protected name so using 'stat' instead
 
 # Changing "ls" to "exa"
 alias ls='lsd -al --color=always --group-dirs first' # my preferred listing
@@ -192,18 +193,17 @@ _fzf_complete_vim() {
   )
 }
 
-#defn() {
-#while getopts ":f:l" option; do
-  #case $option in
-    #f)
-						#cat $(find ~/pmath-dictionary/definitions | grep "...$OPTARG")
-      #;;
-    #l)
-    #cat "$(find ~/pmath-dictionary/definitions | fzf --height 40% --reverse --inline-info --tac)"
-      #;;
-  #esac
-#done
-#}
+
+#--- Function for quickly uploading/receiving a file from my server.
+get(){
+	rsync root@azuwaterloo.com:/var/Documents/$1 .
+}
+
+send(){
+	rsync $1 root@azuwaterloo.com:/var/Documents/
+}
+
+#-- PMATH directories
 
 defn(){
 						cat $(find ~/pmath-dictionary/definitions | grep "...$1")
