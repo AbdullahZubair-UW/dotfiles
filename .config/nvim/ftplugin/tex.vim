@@ -38,7 +38,7 @@ try
   call IMAP('.wfig ', "\\begin{wrapfigure}[<++>]{r}{<++>}\<CR>\\centering\<CR>\\includegraphics[<++>]{<++>}\<CR>\\caption{<++>}\<CR>\\label{fig:<++>}\<CR>\\end{wrapfigure}\<CR><++>", 'tex')
   call IMAP('.img ', "\\begin{center}\<CR>\\includegraphics[<++>]{<++>}\<CR>\\end{center}\<CR><++>", 'tex')
   call IMAP('.code ', "\\begin{lstlisting}\<CR><++>\<CR>\\end{lstlisting}\<CR><++>\<ESC>k<<", 'tex')
-  call IMAP('.mat ', "\\begin{pmatrix}\<CR><++>\<CR>\\end{pmatrix}<++>", 'tex')
+  call IMAP('.mat', "\\begin{pmatrix}<++>\\end{pmatrix}<++>", 'tex')
   call IMAP('.beg ', "\\begin{<++>}\<CR><++>\<CR>\\end{<++>}<++>", 'tex') " BEST IDEA EVER
 
   "Miscellaneous maps
@@ -51,6 +51,7 @@ try
   call IMAP('.iint ', '\iint_{<++>}<++> \, d <++>', 'tex')
   call IMAP('.iter ', '\int_{<++>}<++>\int_{<++>} <++> \,d <++> \, d <++>', 'tex')
   call IMAP('.sum ', '\sum_{<++>}<++>', 'tex')
+  call IMAP('.N', '\norm{<++>}<++>', 'tex')
   call IMAP('.prod ', '\prod_{<++>}<++>', 'tex')
   call IMAP('.partial ', '\pdv{<++>}{<++>}<++>', 'tex')
   call IMAP('.restr', '\restr{<++>}{<++>}<++>', 'tex')
