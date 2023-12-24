@@ -1,7 +1,8 @@
-cmd     "zathura"
+cmd     "exo-open"
 oc-cmd     "vim"
+oc-cmd     "zathura;icon:zathura"
 depth      5
-dir "~/teaching/2023-2024"
+dir "~/uwaterloo/Books/"
 /* resume      */
 /* open-parent-as-self */
 /* oc-search-path */
