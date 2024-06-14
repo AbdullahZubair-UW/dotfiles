@@ -44,7 +44,7 @@ try
   "Miscellaneous maps
 		call IMAP ('//', '\dfrac{<++>}{<++>}<++>', "tex")
   call IMAP('<<', '\left< <++>\right><++>', 'tex')
-  call IMAP('||', '\left\lvert <++> \right\rvert<++>', 'tex')
+  call IMAP('||', '\left| <++> \right|<++>', 'tex')
   call IMAP('.floor ', '\left\lfloor <++> \right\rfloor<++>', 'tex')
   call IMAP('.ceil ', '\left\lceil <++> \right\rceil<++>', 'tex')
   call IMAP('.int ', '\int_{<++>}<++> \, d <++>', 'tex')
@@ -59,6 +59,7 @@ try
 	call IMAP('.tit', '\textit{<++>}<++>', 'tex')
 	call IMAP('.tt', '\text{<++>}<++>', 'tex')
 	call IMAP('.set', "\\{<++>\\}<++>", 'tex')
+	call IMAP('.\', "\\setminus", 'tex')
 	call IMAP('mk', "$<++>$<++>", 'tex')
   call IMAP('dm', "\\[\<CR><++>\<CR>.\\]<++>", 'tex')
 	call IMAP('.choose', "\binom{<++>}{<++>}<++>", 'tex')
@@ -78,7 +79,7 @@ try
 	call IMAP('**', "\\cdot ", 'tex')
 
   " Deferred to end because they're LONG.
-  call IMAP('soln', "\\begin{solution}\<CR><++>\<CR>\\end{solution}<++>", 'tex')
+		call IMAP('soln', "\\begin{solution}[Question <++>] \\text{}\<CR><++>\<CR>\\end{solution}<++>", 'tex')
   call IMAP('DEFN', "\\begin{defn}\<CR><++>\<CR>\\end{defn}<++>", 'tex')
   call IMAP('EX', "\\begin{ex}\<CR><++>\<CR>\\end{ex}<++>", 'tex')
   call IMAP('LEM', "\\begin{lem}\<CR><++>\<CR>\\end{lem}<++>", 'tex')

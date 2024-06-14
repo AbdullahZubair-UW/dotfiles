@@ -8,7 +8,7 @@ require "user.solarized"
 require "user.leaf"
 
 
-vim.cmd([[colorscheme monokai-pro]])
+vim.cmd([[colorscheme darkplus]])
 require("telescope").load_extension "file_browser"
 
 

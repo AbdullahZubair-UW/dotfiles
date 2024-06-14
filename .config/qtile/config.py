@@ -75,7 +75,7 @@ for g, k in zip(groups, group_hotkeys):
     keys.extend(
         [
             # mod1 + letter of group = switch to group
-            Key( [alt], k, lazy.group[g.name].toscreen()),
+            Key( [mod], k, lazy.group[g.name].toscreen()),
             # mod1 + shift + letter of group = switch to & move focused window to group
             Key( [mod, "shift"], k, lazy.window.togroup(g.name, switch_group=False)),
         ]
