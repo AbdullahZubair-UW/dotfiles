@@ -42,7 +42,7 @@ try
   call IMAP('.beg ', "\\begin{<++>}\<CR><++>\<CR>\\end{<++>}<++>", 'tex') " BEST IDEA EVER
 
   "Miscellaneous maps
-		call IMAP ('//', '\dfrac{<++>}{<++>}<++>', "tex")
+		call IMAP ('//', '\frac{<++>}{<++>}<++>', "tex")
   call IMAP('<<', '\left< <++>\right><++>', 'tex')
   call IMAP('||', '\left| <++> \right|<++>', 'tex')
   call IMAP('.floor ', '\left\lfloor <++> \right\rfloor<++>', 'tex')
@@ -59,6 +59,8 @@ try
 	call IMAP('.tit', '\textit{<++>}<++>', 'tex')
 	call IMAP('.tt', '\text{<++>}<++>', 'tex')
 	call IMAP('.set', "\\{<++>\\}<++>", 'tex')
+	call IMAP('.dag', "\\textcolor{blue}{\\dagger}", 'tex')
+	call IMAP('.ast', "\\textcolor{blue}{\\ast}", 'tex')
 	call IMAP('.\', "\\setminus", 'tex')
 	call IMAP('mk', "$<++>$<++>", 'tex')
   call IMAP('dm', "\\[\<CR><++>\<CR>.\\]<++>", 'tex')
