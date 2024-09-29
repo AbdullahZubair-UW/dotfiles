@@ -105,7 +105,7 @@ imap <C-w> <esc>:w<CR>:Silent asy %<CR>
 
 " Theme settings
 set termguicolors
-set background=dark
+set background=light
 set t_Co=256
 colorscheme gruvbox8_hard
 

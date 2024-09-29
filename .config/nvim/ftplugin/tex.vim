@@ -18,7 +18,7 @@ try
   " Enumeration environments
 	call IMAP('.SSE', '\section*{<++>}<++>', 'tex')
   call IMAP('ENUM', "\\begin{enumerate}\<CR>\\item <++>\<CR>\\end{enumerate}<++>\<ESC>k<<",'tex')
-  call IMAP('alenum', "\\begin{enumerate}[label=(\\alph*), leftmargin=*,align=left] \<CR>\\item <++>\<CR>\\end{enumerate}<++>\<ESC>k<<",'tex')
+		call IMAP('alenum', "\\begin{enumerate}[label=\\textnormal{(\\alph*)}, leftmargin=*,align=left] \<CR>\\item <++>\<CR>\\end{enumerate}<++>\<ESC>k<<",'tex')
   call IMAP('ANUM', "\\begin{enumerate}[label=(\\alph*), leftmargin=*,align=left] \<CR>\\item <++>\<CR>\\end{enumerate}<++>\<ESC>k<<",'tex')
   call IMAP('itemize ', "\\begin{itemize}\<CR>\\ii <++>\<CR>\\end{itemize}<++>\<ESC>k<<",'tex')
 
@@ -53,7 +53,7 @@ try
   call IMAP('.sum ', '\sum_{<++>}<++>', 'tex')
   call IMAP('.N', '\norm{<++>}<++>', 'tex')
   call IMAP('.prod ', '\prod_{<++>}<++>', 'tex')
-  call IMAP('.partial ', '\pdv{<++>}{<++>}<++>', 'tex')
+  call IMAP('.die', '\pdv{<++>}{<++>}<++>', 'tex')
   call IMAP('.restr', '\restr{<++>}{<++>}<++>', 'tex')
 	call IMAP('.bf', '\textbf{<++>}<++>', 'tex')
 	call IMAP('.tit', '\textit{<++>}<++>', 'tex')
@@ -81,7 +81,7 @@ try
 	call IMAP('**', "\\cdot ", 'tex')
 
   " Deferred to end because they're LONG.
-		call IMAP('soln', "\\begin{solution}[Question <++>] \\text{}\<CR><++>\<CR>\\end{solution}<++>", 'tex')
+		call IMAP('soln', "\\begin{solution}\<CR><++>\<CR>\\end{solution}<++>", 'tex')
   call IMAP('DEFN', "\\begin{defn}\<CR><++>\<CR>\\end{defn}<++>", 'tex')
   call IMAP('EX', "\\begin{ex}\<CR><++>\<CR>\\end{ex}<++>", 'tex')
   call IMAP('LEM', "\\begin{lem}\<CR><++>\<CR>\\end{lem}<++>", 'tex')
